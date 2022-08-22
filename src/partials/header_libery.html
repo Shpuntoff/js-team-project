@@ -1,24 +1,26 @@
 <header>
-  <div class="header">
+  <div class="header__libery">
     <div class="conteiner">
       <nav class="nav">
         <a href="./index.html" class="logo"
-          ><svg width="24" height="24" aria-label="logo" >
+          ><svg width="24" height="24" aria-label="logo">
             <use href="./images/symbol-defs.svg#icon-film-min"></use>
           </svg>
           <span class="logo__title">Filmoteka</span>
         </a>
         <ul class="nav__list">
-          <li class="nan__item active"><a href="./index.html">Home</a></li>
-          <li class="nan__item"><a href="./my-library.html">My library</a></li>
+          <li class="nan__item"><a href="./index.html">Home</a></li>
+          <li class="nan__item active">
+            <a href="./my-library.html">My library</a>
+          </li>
         </ul>
       </nav>
-      <ul>
-        <li>
-         <button type="button">Watched</button> 
+      <ul class="btn__list">
+        <li class="btn__item">
+          <button type="button" class="btn btn--active">Watched</button>
         </li>
-        <li>
-         <button type="button">Queue</button> 
+        <li class="btn__item">
+          <button type="button" class="btn">Queue</button>
         </li>
       </ul>
     </div>
