@@ -14,7 +14,7 @@
   background-image: url('../images/header_mob.jpg');
   background-size: 230px 320px;
   background-repeat: no-repeat;
-  background-size:contain;
+  background-size: contain;
   margin: 0 auto;
 
   @media (min-device-pixel-ratio: 2),
@@ -38,21 +38,16 @@
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 44px;
-
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-
 }
-
-
-
 
 .nan__item {
   font-weight: 500;
@@ -61,12 +56,12 @@
   text-transform: uppercase;
 }
 
-.nan__item:first-child{
-    margin-right: 40px;
-    }
+.nan__item:first-child {
+  margin-right: 40px;
+}
 
 .notif {
-    margin-top: 20px;
+  margin-top: 20px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
@@ -75,26 +70,23 @@
   color: #ff001b;
 }
 
-
 .form {
-    max-width: 100%;
-    width: 280px;
-    border-bottom: 0.5px solid #FFFFFF;
-    display: flex;
-    justify-content: space-between;
+  max-width: 100%;
+  width: 280px;
+  border-bottom: 0.5px solid #ffffff;
+  display: flex;
+  justify-content: space-between;
 }
 
 .input {
-    background-color: transparent;
-    border: none;
-   
-    }
-    .input::placeholder{
-        color: #FFFFFF;
-
+  background-color: transparent;
+  border: none;
+}
+.input::placeholder {
+  color: #ffffff;
 }
 
-.button{
-    background-color: transparent;
-    border: none;
+.button {
+  background-color: transparent;
+  border: none;
 }
