@@ -23,10 +23,10 @@ export function watchedMovies(ection, data) {
 export function queueMovies(ection, data) {
     if (ection === 'put') {
         if (localStorage.getItem(`queueMoviesIDs`)) {
-            const watched = Array.from(JSON.parse(localStorage.getItem(`queueMoviesIDs`)));
-            if (!watched.includes(data)) {
-                watched.push(data);
-                localStorage.setItem(`queueMoviesIDss`, JSON.stringify(watched));
+            const queue = Array.from(JSON.parse(localStorage.getItem(`queueMoviesIDs`)));
+            if (!queue.includes(data)) {
+                queue.push(data);
+                localStorage.setItem(`queueMoviesIDss`, JSON.stringify(queue));
             };
         } else {
             localStorage.setItem(`queueMoviesIDs`, JSON.stringify([data]));
@@ -34,10 +34,10 @@ export function queueMovies(ection, data) {
     } else if (ection === 'get' && localStorage.getItem(`queueMoviesIDs`)) {
         return Array.from(JSON.parse(localStorage.getItem(`queueMoviesIDs`)));
     } else if (ection === 'remove' && localStorage.getItem(`queueMoviesIDs`)) {
-        const watched = Array.from(JSON.parse(localStorage.getItem(`queueMoviesIDs`)));
-        if (watched.includes(data)) {
-            watched.splice(watched.indexOf(data), 1);
-            localStorage.setItem(`queueMoviesIDs`, JSON.stringify(watched));
+        const queue = Array.from(JSON.parse(localStorage.getItem(`queueMoviesIDs`)));
+        if (queue.includes(data)) {
+            queue.splice(queue.indexOf(data), 1);
+            localStorage.setItem(`queueMoviesIDs`, JSON.stringify(queue));
         };
     };
 };
