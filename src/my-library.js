@@ -1,0 +1,1 @@
+import { watchedMovies, queueMovies } from './js/user-storage.js';
