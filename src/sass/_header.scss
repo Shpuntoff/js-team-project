@@ -63,6 +63,7 @@
   }
 }
 
+
 .logo {
 cursor: pointer;
 
@@ -82,11 +83,13 @@ cursor: pointer;
     font-size: 30px;
     line-height: 1.17;
   }
-}
+
+
 
 .nav {
   display: flex;
   align-items: center;
+
   justify-content: space-between;
   margin-bottom: 44px;
 }
@@ -95,6 +98,10 @@ cursor: pointer;
   display: flex;
   align-items: center;
 }
+
+
+}
+
 
 .nan__item {
   font-weight: 500;
@@ -107,9 +114,11 @@ cursor: pointer;
   margin-right: 40px;
 }
 
+
 .active {
   border-bottom: 3px solid #FF001B;
 }
+
 
 .notif {
   margin-top: 20px;
@@ -118,6 +127,7 @@ cursor: pointer;
   line-height: 1.14;
 
   color: #ff001b;
+
 
   @media screen and (min-width: 768px) {
     text-align: center;
@@ -140,22 +150,33 @@ cursor: pointer;
   @media screen and (min-width: 768px) {
     width: 394px;
   }
+
 }
 
 .input {
   background-color: transparent;
   border: none;
+
   width: 100%;
 }
 .input::placeholder {
   display: block;
+
+}
+.input::placeholder {
+
   color: #ffffff;
 }
 
 .button {
+
 cursor: pointer;
 
   background-color: transparent;
   border: none;
   padding: 5px;
+
+  background-color: transparent;
+  border: none;
+
 }
