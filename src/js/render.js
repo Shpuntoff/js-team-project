@@ -49,7 +49,7 @@ export function renderLibraryCards(array) {
 };
 
 export function renderModal({ id, genres, poster_path, title, original_title, vote_average, vote_count, popularity, overview}) {
-    const targetForAdd = document.querySelector('.content');
+    const targetForAdd = document.querySelector('.list');
     const currentGenres = [];
     genres.forEach(elem => currentGenres.push(elem.name));
     targetForAdd.innerHTML = `<div id="${id}">
