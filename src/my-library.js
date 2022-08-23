@@ -2,7 +2,7 @@ import { watchedMovies, queueMovies } from './js/user-storage.js';
 import { requesterApi, requesterApiByID, requesterApiGenres } from './js/requester-api.js';
 import { renderHomeCards, renderLibraryCards, renderModal, renderWatchedOrQueue } from './js/render.js';
 
-const btns = document.querySelectorAll('.btn')
+const btns = document.querySelectorAll('.header-library__btn')
 const list = document.querySelector('.list')
 const imgHolder = document.querySelector('.wrapper-holder')
 
@@ -10,9 +10,9 @@ requesterApiGenres()
 
 btns.forEach((elem) => {
     elem.addEventListener('click', (event) => {
-        if (!elem.classList.contains('btn--active')) {
+        if (!elem.classList.contains('header-library__btn--active')) {
             btns.forEach((elem) => {
-                elem.classList.toggle('btn--active')
+                elem.classList.toggle('header-library__btn--active')
             });
         };
         imgHolder.classList.add('is-hidden');
@@ -49,6 +49,7 @@ btns.forEach((elem) => {
 
 list.innerHTML = '';
 const wMovies = JSON.parse(localStorage.getItem(`watchedMoviesIDs`));
+imgHolder.classList.add('is-hidden');
 if (wMovies) {
     wMovies.forEach(elem => {
         requesterApiByID(elem)
