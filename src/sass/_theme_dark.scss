@@ -1,5 +1,5 @@
 .header,
-.header__libery {
+.header-library {
   position: relative;
 }
 
@@ -28,11 +28,10 @@
   cursor: pointer;
 }
 
-.dark-theme{
-  .data__content{
-    .title{
+.dark-theme {
+  .data__content {
+    .title {
       color: white;
     }
   }
-
 }
