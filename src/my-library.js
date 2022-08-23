@@ -3,26 +3,63 @@ import { requesterApi, requesterApiByID, requesterApiGenres } from './js/request
 import { renderHomeCards, renderLibraryCards, renderModal, renderWatchedOrQueue } from './js/render.js';
 
 const btns = document.querySelectorAll('.btn')
+const list = document.querySelector('.list')
+const imgHolder = document.querySelector('.wrapper-holder')
+
+requesterApiGenres()
+
 btns.forEach((elem) => {
     elem.addEventListener('click', (event) => {
-        btns.forEach((elem) => {
-            elem.classList.toggle('btn--active')
-        })
-
-
-        console.log(event.target.textContent);
-    })
+        if (!elem.classList.contains('btn--active')) {
+            btns.forEach((elem) => {
+                elem.classList.toggle('btn--active')
+            });
+        };
+        imgHolder.classList.add('is-hidden');
+        if (event.target.textContent === 'Watched') {
+            list.innerHTML = '';
+            const wMovies = JSON.parse(localStorage.getItem(`watchedMoviesIDs`));
+            if (wMovies) {
+                wMovies.forEach(elem => {
+                    requesterApiByID(elem)
+                        .then(data => {
+                            renderWatchedOrQueue(data);
+                        });
+                });
+            } else {
+                imgHolder.classList.remove('is-hidden');
+            };
+        } else if (event.target.textContent === 'Queue') {
+            list.innerHTML = '';
+            const qMoviesIDs = JSON.parse(localStorage.getItem(`queueMoviesIDs`));
+            imgHolder.classList.add('is-hidden');
+            if (qMoviesIDs) {
+                qMoviesIDs.forEach(elem => {
+                    requesterApiByID(elem)
+                        .then(data => {
+                            renderWatchedOrQueue(data);
+                        });
+                });
+            } else {
+                imgHolder.classList.remove('is-hidden');
+            };
+        };
+    });
 })
 
-JSON.parse(localStorage.getItem(`watchedMoviesIDs`))
-    .forEach(elem => {
+list.innerHTML = '';
+const wMovies = JSON.parse(localStorage.getItem(`watchedMoviesIDs`));
+if (wMovies) {
+    wMovies.forEach(elem => {
         requesterApiByID(elem)
             .then(data => {
-                renderWatchedOrQueue(data)
-            })
+                renderWatchedOrQueue(data);
+            });
     });
+} else {
+    imgHolder.classList.remove('is-hidden');
+};
 
-// requesterApiGenres()
 // requesterApi()
 //     .then(data => {
 //         renderLibraryCards(data.results)
@@ -35,13 +72,3 @@ JSON.parse(localStorage.getItem(`watchedMoviesIDs`))
 //     })
 
 // watchedMovies('put', 755566)
-
-
-
-// JSON.parse(localStorage.getItem(`queueMoviesIDs`))
-//     .forEach(elem => {
-//         requesterApiByID(elem)
-//             .then(data => {
-//                 renderWatchedOrQueue(data)
-//             })
-//     });
