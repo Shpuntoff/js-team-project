@@ -3,6 +3,7 @@ import { requesterApi, requesterApiByID, requesterApiGenres } from './js/request
 import { renderHomeCards, renderLibraryCards, renderModal } from './js/render.js';
 import {renderPagination} from './js/pagination.js';
 import { btn } from './js/theme-lite-dark.js'
+import {scrollBtn} from './js/scroll.js'
 
 requesterApiGenres()
 requesterApi()
