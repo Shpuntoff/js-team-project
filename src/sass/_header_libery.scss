@@ -183,10 +183,18 @@
   line-height: 1.33;
   text-transform: uppercase;
   color: #ffffff;
+  cursor: pointer;
 
   &--active {
     background-color: #ff6b01;
     border: 1px solid #ff6b01;
+    box-shadow: 0 0 20px rgb(255 107 1 / 50%);
+  }
+
+  &:hover {
+    background-color: #ff6b01;
+    border: 1px solid #ff6b01;
+    box-shadow: 0 0 20px rgb(255 107 1 / 50%);
   }
 
   @media screen and (min-width: 768px) {
