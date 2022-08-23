@@ -146,3 +146,15 @@
     }
   }
 }
+
+.wrapper-holder {
+  text-align: center;
+}
+
+.wrapper-holder.is-hidden {
+  display: none;
+}
+
+.img-holder {
+  max-width: 700px;
+}

@@ -216,17 +216,27 @@
   background-color: transparent;
 
   color: #ffffff;
+  cursor: pointer;
   border: 1px solid #ffffff;
   border-radius: 5px;
+
+  &--active {
+    background-color: #ff6b01;
+    border: 1px solid #ff6b01;
+    box-shadow: 0 0 20px rgb(255 107 1 / 50%);
+  }
+
+  &:hover {
+    background-color: #ff6b01;
+    border: 1px solid #ff6b01;
+    box-shadow: 0 0 20px rgb(255 107 1 / 50%);
+  }
 
   &:first-child {
     margin-right: 20px;
   }
 
-  &--active {
-    background: #ff6b01;
-    border: none;
-  }
+
 
   @media screen and (min-width: 768px) {
     width: 148px;
