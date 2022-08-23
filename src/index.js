@@ -1,3 +1,4 @@
+import './js/populatioin'
 import NewApiService from './js/apiSevice';
 import { watchedMovies, queueMovies } from './js/user-storage.js';
 import { requesterApi, requesterApiByID, requesterApiGenres } from './js/requester-api.js';
@@ -8,3 +9,8 @@ requesterApi()
         console.log(data.results);
         renderHomeCards(data.results)
     })
+
+
+
+
+
