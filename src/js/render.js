@@ -1,5 +1,5 @@
 export function renderHomeCards(array) {
-    const targetForAdd = document.querySelector('.content');
+    const targetForAdd = document.querySelector('.list');
     const gen = array.reduce((acc, { poster_path, name, title, release_date, genre_ids }) => {
         const currentGenres = [];
         const genres = Array.from(JSON.parse(localStorage.getItem(`genresList`)));
@@ -8,18 +8,23 @@ export function renderHomeCards(array) {
                 currentGenres.push(elem.name);
             };
         });
-        return acc + `<div>
-                        <img class="card-img" src="https://image.tmdb.org/t/p/w500/${poster_path}">
-                        <h2 class="card-header">${name ? name : title}</h2>
-                        <p>${currentGenres.join(', ')}</p>
-                        <p>${release_date ? release_date.slice(0, 4) : 2022}</p>
-                    </div>`
+        return acc + `<li class="item">
+                        <div class="photo__wrapper">
+                            <a class="img__link" href="#">
+                                <img class="img" src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="" width="395"">
+                            </a>
+                        </div>
+                        <div class="data__content">
+                            <h2 class="title">${name ? name : title}</h2>
+                            <p  class="text">${currentGenres.join(', ')} | ${release_date ? release_date.slice(0, 4) : 2022}</p>
+                        </div>
+                    </li>`
     }, '');
     targetForAdd.innerHTML = gen;
 };
 
 export function renderLibraryCards(array) {
-    const targetForAdd = document.querySelector('.content');
+    const targetForAdd = document.querySelector('.list');
     const gen = array.reduce((acc, { poster_path, name, title, vote_average, release_date, genre_ids }) => {
         const currentGenres = [];
         const genres = Array.from(JSON.parse(localStorage.getItem(`genresList`)));
@@ -28,13 +33,17 @@ export function renderLibraryCards(array) {
                 currentGenres.push(elem.name);
             };
         });
-        return acc + `<div>
-                        <img class="card-img" src="https://image.tmdb.org/t/p/w500/${poster_path}">
-                        <h2 class="card-header">${name ? name : title}</h2>
-                        <p>${currentGenres.join(', ')}</p>
-                        <p>${release_date ? release_date.slice(0, 4) : 2022}</p>
-                        <p>${vote_average}</p>
-                    </div>`
+        return acc + `<li class="item">
+                        <div class="photo__wrapper">
+                            <a class="img__link" href="#">
+                                <img class="img" src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="" width="395"">
+                            </a>
+                        </div>
+                        <div class="data__content">
+                            <h2 class="title">${name ? name : title}</h2>
+                            <p  class="text">${currentGenres.join(', ')} | ${release_date ? release_date.slice(0, 4) : 2022} ${vote_average}</p>
+                        </div>
+                    </li>`
     }, '');
     targetForAdd.innerHTML = gen;
 };
