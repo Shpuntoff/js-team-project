@@ -11,5 +11,5 @@ requesterApi()
 
 
 
-
+    import './js/team-modal';
 
