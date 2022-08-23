@@ -1,28 +1,56 @@
-<header>
-  <div class="header__libery">
-    <div class="conteiner">
-      <nav class="nav">
-        <a href="./index.html" class="logo"
-          ><svg width="24" height="24" aria-label="logo">
+<header class="header-library">
+  <!-- <div class="header-library"> -->
+  <div class="conteiner-library">
+    <nav class="conteiner-library__nav">
+      <div class="header-library__logo">
+        <a href=""
+          ><svg class="search" width="24" height="24" aria-label="search">
             <use href="./images/symbol-defs.svg#icon-film-min"></use>
           </svg>
-          <span class="logo__title">Filmoteka</span>
+          <span class="header-library__title">Filmoteka</span>
         </a>
-        <ul class="nav__list">
-          <li class="nan__item"><a href="./index.html">Home</a></li>
-          <li class="nan__item active">
-            <a href="./my-library.html">My library</a>
+      </div>
+
+      <div class="header-library-nav-list__page">
+        <ul class="header-library-nav__list">
+          <li class="header-library-nan__item">
+            <a class="header-library-nav__text" href="./index.html">Home</a>
+          </li>
+          <li
+            class="header-library-nan__item header-library-nan__item--current"
+          >
+            <a class="header-library-nav__text" href="">My library</a>
           </li>
         </ul>
-      </nav>
-      <ul class="btn__list">
-        <li class="btn__item">
-          <button type="button" class="btn btn--active">Watched</button>
-        </li>
-        <li class="btn__item">
-          <button type="button" class="btn">Queue</button>
-        </li>
-      </ul>
-    </div>
+      </div>
+    </nav>
+
+    <ul class="header-library__list">
+      <li class="header-library__item">
+        <button
+          class="header-library__btn header-library__btn--active"
+          type="button"
+        >
+          Watched
+        </button>
+      </li>
+      <li class="header-library__item">
+        <button class="header-library__btn" type="button">queue</button>
+      </li>
+    </ul>
+    <!-- </div> -->
   </div>
 </header>
+
+<!-- <nav class="nav">
+          <a href="./index.html" class="logo"
+            ><svg width="24" height="24" aria-label="logo">
+              <use href="./images/symbol-defs.svg#icon-film-min"></use>
+            </svg>
+            <span class="logo__title">Filmoteka</span>
+          </a>
+          <ul class="nav__list">
+            <li class="nan__item active"><a href="./index.html">Home</a></li>
+            <li class="nan__item"><a href="./my-library.html">My library</a></li>
+          </ul>
+        </nav> -->

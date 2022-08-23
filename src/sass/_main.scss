@@ -29,8 +29,6 @@
   }
 }
 
-
-
 .photo__wrapper {
   background-color: grey;
   border-radius: 5px;
@@ -40,6 +38,7 @@
   height: 574px;
 }
 .img {
+  display: inline-block;
 }
 
 .data__content {
