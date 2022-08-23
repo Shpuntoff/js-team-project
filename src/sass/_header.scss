@@ -1,10 +1,20 @@
-* {
+li {
+  list-style: none;
+}
+
+a {
   text-decoration: none;
   color: #ffffff;
-  list-style-type: none;
-  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .header {
@@ -13,7 +23,7 @@
   background-image: url('../images/header_mob.jpg');
   background-size: 230px 320px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   margin: 0 auto;
 
   @media (min-device-pixel-ratio: 2),
@@ -23,14 +33,15 @@
     background-image: url('../images/header_mob2x.jpg');
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 320px) {
     max-width: 768px;
     height: 216px;
 
     background-image: url('../images/header_tablet.jpg');
     background-size: 216px, 768px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -40,12 +51,14 @@
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 768px) {
     max-width: 1280px;
     background-image: url('../images/header_desktop.jpg');
     background-size: 216px, 1280px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
+
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -63,9 +76,9 @@
   }
 }
 
-
 .logo {
-cursor: pointer;
+  cursor: pointer;
+  stroke: #ffffff;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -75,6 +88,7 @@ cursor: pointer;
 
 .logo__title {
   display: none;
+  color: #ffffff;
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -84,7 +98,6 @@ cursor: pointer;
     line-height: 1.17;
   }
 }
-
 
 .nav {
   display: flex;
@@ -99,26 +112,21 @@ cursor: pointer;
   align-items: center;
 }
 
-
-
-
-
 .nan__item {
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .nan__item:first-child {
   margin-right: 40px;
 }
 
-
 .active {
-  border-bottom: 3px solid #FF001B;
+  border-bottom: 3px solid #ff001b;
 }
-
 
 .notif {
   margin-top: 20px;
@@ -128,21 +136,20 @@ cursor: pointer;
 
   color: #ff001b;
 
-
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 320px) {
     text-align: center;
     line-height: 1.14;
   }
 }
 
 .form {
-  max-width: 100%;
   width: 280px;
+  max-width: 100%;
   border-bottom: 0.5px solid #ffffff;
   display: flex;
   justify-content: space-between;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 320px) {
     margin: 0 auto;
     width: 336px;
     justify-content: center;
@@ -150,7 +157,6 @@ cursor: pointer;
   @media screen and (min-width: 768px) {
     width: 394px;
   }
-
 }
 
 .input {
@@ -161,16 +167,13 @@ cursor: pointer;
 }
 .input::placeholder {
   display: block;
-
 }
 .input::placeholder {
-
   color: #ffffff;
 }
 
 .button {
-
-cursor: pointer;
+  cursor: pointer;
 
   background-color: transparent;
   border: none;
@@ -178,5 +181,4 @@ cursor: pointer;
 
   background-color: transparent;
   border: none;
-
 }

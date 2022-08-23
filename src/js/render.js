@@ -1,49 +1,58 @@
 export function renderHomeCards(array) {
-    const targetForAdd = document.querySelector('.content');
-    const gen = array.reduce((acc, { poster_path, name, title, release_date, genre_ids }) => {
+    const targetForAdd = document.querySelector('.list');
+    const gen = array.reduce((acc, { id, poster_path, name, title, release_date, genre_ids }) => {
         const currentGenres = [];
-        const genres = Array.from(JSON.parse(localStorage.getItem(`genresList`)));
+        const genres = JSON.parse(localStorage.getItem(`genresList`));
         genres.forEach(elem => {
             if (genre_ids.includes(elem.id)) {
                 currentGenres.push(elem.name);
             };
         });
-        return acc + `<div>
-                        <img class="card-img" src="https://image.tmdb.org/t/p/w500/${poster_path}">
-                        <h2 class="card-header">${name ? name : title}</h2>
-                        <p>${currentGenres.join(', ')}</p>
-                        <p>${release_date ? release_date.slice(0, 4) : 2022}</p>
-                    </div>`
+        return acc + `<li class="item" id="${id}">
+                        <div class="photo__wrapper">
+                            <a class="img__link" href="#">
+                                <img class="img" src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="" width="395"">
+                            </a>
+                        </div>
+                        <div class="data__content">
+                            <h2 class="title">${name ? name : title}</h2>
+                            <p  class="text">${currentGenres.join(', ')} | ${release_date ? release_date.slice(0, 4) : 2022}</p>
+                        </div>
+                    </li>`
     }, '');
     targetForAdd.innerHTML = gen;
 };
 
 export function renderLibraryCards(array) {
-    const targetForAdd = document.querySelector('.content');
-    const gen = array.reduce((acc, { poster_path, name, title, vote_average, release_date, genre_ids }) => {
+    const targetForAdd = document.querySelector('.list');
+    const gen = array.reduce((acc, { id, poster_path, name, title, vote_average, release_date, genre_ids }) => {
         const currentGenres = [];
-        const genres = Array.from(JSON.parse(localStorage.getItem(`genresList`)));
+        const genres = JSON.parse(localStorage.getItem(`genresList`));
         genres.forEach(elem => {
             if (genre_ids.includes(elem.id)) {
                 currentGenres.push(elem.name);
             };
         });
-        return acc + `<div>
-                        <img class="card-img" src="https://image.tmdb.org/t/p/w500/${poster_path}">
-                        <h2 class="card-header">${name ? name : title}</h2>
-                        <p>${currentGenres.join(', ')}</p>
-                        <p>${release_date ? release_date.slice(0, 4) : 2022}</p>
-                        <p>${vote_average}</p>
-                    </div>`
+        return acc + `<li class="item" id="${id}">
+                        <div class="photo__wrapper">
+                            <a class="img__link" href="#">
+                                <img class="img" src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="" width="395"">
+                            </a>
+                        </div>
+                        <div class="data__content">
+                            <h2 class="title">${name ? name : title}</h2>
+                            <p  class="text">${currentGenres.join(', ')} | ${release_date ? release_date.slice(0, 4) : 2022} ${vote_average.toFixed(1)}</p>
+                        </div>
+                    </li>`
     }, '');
     targetForAdd.innerHTML = gen;
 };
 
-export function renderModal({ genres, poster_path, title, original_title, vote_average, vote_count, popularity, overview}) {
-    const targetForAdd = document.querySelector('.content');
+export function renderModal({ id, genres, poster_path, title, original_title, vote_average, vote_count, popularity, overview}) {
+    const targetForAdd = document.querySelector('.list');
     const currentGenres = [];
     genres.forEach(elem => currentGenres.push(elem.name));
-    targetForAdd.innerHTML = `<div>
+    targetForAdd.innerHTML = `<div id="${id}">
                         <img class="card-img" src="https://image.tmdb.org/t/p/w500/${poster_path}">
                         <h2 class="card-header">${title}</h2>
                         <div class="card-stats">
@@ -53,8 +62,8 @@ export function renderModal({ genres, poster_path, title, original_title, vote_a
                             <p>Genre</p>
                         </div>
                         <div class="card-stats-values">
-                            <p><span>${vote_average}</span> / ${vote_count}</p>
-                            <p>${popularity}</p>
+                            <p><span>${vote_average.toFixed(1)}</span> / ${vote_count}</p>
+                            <p>${popularity.toFixed(1)}</p>
                             <p>${original_title}</p>
                             <p>${currentGenres.join(', ')}</p>
                         </div>

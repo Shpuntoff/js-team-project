@@ -1,0 +1,43 @@
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+
+    opacity: 0;
+    pointer-events: none;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+.spinner {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation: spin 1500ms linear infinite;
+  stroke: #ff6b01;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    stroke: #ffffff
+  }
+  50% {
+      stroke: #ff6b01;
+
+  }
+  100% {
+    transform: rotate(360deg);
+    stroke: #ffffff
+
+  }
+}
