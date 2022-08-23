@@ -5,7 +5,6 @@ import { renderHomeCards, renderLibraryCards, renderModal } from './js/render.js
 requesterApiGenres()
 requesterApi()
     .then(data => {
-        console.log(data.results);
         renderHomeCards(data.results)
     })
 
