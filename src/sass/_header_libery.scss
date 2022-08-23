@@ -13,7 +13,7 @@
   background: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/Rectangle_mob.jpg');
     background-size: 230px 320px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   margin: 0 auto;
 
   @media (min-device-pixel-ratio: 2),
@@ -26,14 +26,15 @@
   
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 320px) {
     max-width: 768px;
     height: 219px;
 
     background:linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/Rectangle_tablet.jpg');
     background-size: 219px, 768px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -41,16 +42,18 @@
       (min-resolution: 2dppx) {
       background:linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/Rectangle_tablet2x.jpg');
       background-repeat: no-repeat;
-  background-size: contain;
+      background-size: cover;
+      background-position: center;;
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 768px) {
     max-width: 1280px;
     background:linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/Rectangle_desktop.jpg');
     background-size: 216px, 1280px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -58,7 +61,8 @@
       (min-resolution: 2dppx) {
       background:linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('../images/Rectangle-desktop2x.jpg');
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
+    background-position: center;
     }
   }
 }
@@ -130,7 +134,7 @@
   justify-content: space-between;
 //   margin-bottom: 62px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 320px) {
     justify-content: center;
     // margin-bottom: 52px;
 
@@ -139,7 +143,7 @@
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 768px) {
 
     .btn__item:first-child{
         margin-right: 16px;
