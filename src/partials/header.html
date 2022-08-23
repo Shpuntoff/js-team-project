@@ -3,7 +3,7 @@
     <div class="conteiner">
       <nav class="nav">
         <a href="./index.html" class="logo"
-          ><svg width="24" height="24" aria-label="logo" >
+          ><svg width="24" height="24" aria-label="logo">
             <use href="./images/symbol-defs.svg#icon-film-min"></use>
           </svg>
           <span class="logo__title">Filmoteka</span>
@@ -16,14 +16,25 @@
       <form action="" class="form">
         <input type="text" placeholder="Movie search" class="input" autofocus />
         <button type="submit" class="button">
-          <svg class="button__search" width="12" height="12" aria-label="search">
-            <use href="./images/symbol-defs.svg#icon-search-2-min" ></use>
+          <svg
+            class="button__search"
+            width="12"
+            height="12"
+            aria-label="search"
+          >
+            <use href="./images/symbol-defs.svg#icon-search-2-min"></use>
           </svg>
         </button>
       </form>
       <p class="notif">
         Search result not successful. Enter the correct movie name and
       </p>
+      <div id="app" class="light button-theme">
+        <button class="btn-theme">
+          <span class="material-symbols-outlined theme-light"> light_mode </span>
+          <span class="material-symbols-outlined theme-night"> dark_mode </span>
+        </button>
+      </div>
     </div>
   </div>
 </header>
