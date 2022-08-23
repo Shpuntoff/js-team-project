@@ -1,11 +1,19 @@
 .main {
   padding-top: 60px;
+
+  box-sizing: border-box;
 }
 
 .container {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 0 16px;
+  @media screen and (min-width: 767px) {
+    max-width: 767px;
+    padding: 0 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 1280px;
+  }
 }
 
 .list {
@@ -15,7 +23,6 @@
     align-items: center;
 
     .item {
-      // width: 280px;
       margin-bottom: 20px;
     }
   }
@@ -29,13 +36,12 @@
   }
 
   .item {
-    // width: 336px;
     margin-right: 30px;
     margin-bottom: 32px;
 
-    // &:nth-child(2n) {
-    //   margin-right: 30px;
-    // }
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
   }
 }
 
@@ -47,9 +53,13 @@
   }
 
   .item {
-    width: calc((100% - 2 * 16px) / 3);
+    max-width: calc((100% - 2 * 16px) / 3);
     margin-right: 16px;
     margin-bottom: 32px;
+
+    &:nth-child(2n) {
+      margin-right: 16px;
+    }
 
     &:nth-child(3n) {
       margin-right: 0;
@@ -90,19 +100,27 @@
     display: block;
     width: 100%;
     object-fit: cover;
+
+    transition: all ease-in 550ms;
+
+    &:hover{
+      transform: scale(1.05);
+    }
   }
 }
 
+
+
 .data__content {
   padding-top: 12px;
+
 
   .title {
     color: black;
     font-size: 12px;
     line-height: 1.2;
-
-    @media screen and (min-width: 768px) {
-    }
+    padding: 0;
+    margin: 0;
 
     @media screen and (min-width: 1280px) {
       font-style: normal;
@@ -116,15 +134,27 @@
     color: #ff6b08;
     font-size: 12px;
     line-height: 1.2;
-
-    @media screen and (min-width: 768px) {
-    }
+    max-width: 280px;
 
     @media screen and (min-width: 1280px) {
       font-style: normal;
       font-weight: 500;
       font-size: 20px;
       line-height: 1.2;
+
+      max-width: 395px;
     }
   }
+}
+
+.wrapper-holder {
+  text-align: center;
+}
+
+.wrapper-holder.is-hidden {
+  display: none;
+}
+
+.img-holder {
+  max-width: 700px;
 }

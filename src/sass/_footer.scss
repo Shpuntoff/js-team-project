@@ -1,3 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
 
 .footer-container {
   font-style: normal;
@@ -5,7 +15,7 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 1.14;
-  color:  #545454;
+  color: #545454;
   height: 100px;
   align-items: center;
   text-align: center;
@@ -16,14 +26,12 @@
     justify-content: center;
     font-size: 16px;
     line-height: 1.19;
-    max-width: 1600px;
     margin: auto;
   }
 }
 
 .footer-text {
   margin-right: 4px;
-  color: #545454;
 
   @media screen and (max-width: 767px) {
     margin-top: 0;
@@ -34,6 +42,7 @@
 
 .footer-icon {
   margin: 0 10px;
+  
 
   fill: #ff6b08;
 
@@ -70,6 +79,6 @@
 .footer-button:hover,
 .footer-button:focus {
   background-color: #ff6b08;
-  border-radius: 8px;
-  color:  #545454;
+  border-radius: 5px;
+  color: #fff;
 }
