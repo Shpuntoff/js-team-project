@@ -1,18 +1,10 @@
-* {
-  // text-decoration: none;
-  color: #ffffff;
-  // list-style-type: none;
-  box-sizing: border-box;
-  // margin: 0;
-  // padding: 0;
-}
-
 li {
   list-style: none;
 }
 
 a {
   text-decoration: none;
+  color: #ffffff;
 }
 
 p {
@@ -86,6 +78,7 @@ ul {
 
 .logo {
   cursor: pointer;
+  stroke: #ffffff;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -95,6 +88,7 @@ ul {
 
 .logo__title {
   display: none;
+  color: #ffffff;
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -123,6 +117,7 @@ ul {
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .nan__item:first-child {
