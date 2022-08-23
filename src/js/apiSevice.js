@@ -16,6 +16,7 @@ export default class NewApiService {
         return this.#query;
     }
 
+    
     set query(newQuery) {
         this.page = 1;
         this.#query = newQuery;
