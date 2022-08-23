@@ -7,3 +7,9 @@ requesterApi()
     .then(data => {
         renderLibraryCards(data.results)
     })
+
+
+// requesterApiByID(361743)
+//     .then(data => {
+//         renderModal(data)
+//     })
