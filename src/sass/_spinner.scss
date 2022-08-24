@@ -23,21 +23,21 @@
   transform: translate(-50%, -50%);
   transform-origin: center;
   animation: spin 1500ms linear infinite;
-  stroke: #ff6b01;
+  stroke: $accentColor;
 }
 
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-    stroke: #ffffff
+    stroke: $whiteColor
   }
   50% {
-      stroke: #ff6b01;
+      stroke: $accentColor;
 
   }
   100% {
     transform: rotate(360deg);
-    stroke: #ffffff
+    stroke: $whiteColor
 
   }
 }

@@ -4,7 +4,7 @@ li {
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: $whiteColor;
 }
 
 p {
@@ -69,6 +69,8 @@ ul {
 }
 
 .conteiner {
+ 
+
   margin-left: auto;
   margin-right: auto;
   max-width: 320px;
@@ -88,7 +90,7 @@ ul {
 
 .logo {
   cursor: pointer;
-  stroke: #ffffff;
+  stroke: $whiteColor;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -98,7 +100,7 @@ ul {
 
 .logo__title {
   display: none;
-  color: #ffffff;
+  color: $whiteColor;
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -127,7 +129,7 @@ ul {
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: $whiteColor;
 }
 
 .nan__item:first-child {
@@ -135,7 +137,7 @@ ul {
 }
 
 .active {
-  border-bottom: 3px solid #ff001b;
+  border-bottom: 3px solid $secondAccentColor;
 }
 
 .notif {
@@ -144,7 +146,7 @@ ul {
   font-size: 14px;
   line-height: 1.14;
 
-  color: #ff001b;
+  color: $secondAccentColor;
 
   @media screen and (min-width: 320px) {
     text-align: center;
@@ -155,7 +157,7 @@ ul {
 .form {
   width: 280px;
   max-width: 100%;
-  border-bottom: 0.5px solid #ffffff;
+  border-bottom: 0.5px solid $whiteColor;
   display: flex;
   justify-content: space-between;
 
@@ -172,14 +174,16 @@ ul {
 .input {
   background-color: transparent;
   border: none;
-
+  outline: none;
+color: $whiteColor;
   width: 100%;
 }
 .input::placeholder {
   display: block;
+  color: $whiteColor;
 }
 .input::placeholder {
-  color: #ffffff;
+  color: $whiteColor;
 }
 
 .button {
