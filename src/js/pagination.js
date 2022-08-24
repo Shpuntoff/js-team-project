@@ -4,6 +4,9 @@ import {
   requesterApiGenres,
 } from './requester-api.js';
 import {renderHomeCards} from './render.js';
+import {spinner} from'./spinner.js'
+import {onScrollUp} from './scroll'
+
 
 let globalCurrentpage = 1
 let globalAllPages
@@ -12,6 +15,7 @@ const pagination = document.querySelector('.pagination');
 pagination.addEventListener('click', handlerPagination);
 
 export function renderPagination(currentPage, allPages) {
+  
   let markup = '';
   let nextPage = currentPage + 1;
   let nextPageTwo = currentPage + 2;
@@ -21,7 +25,7 @@ export function renderPagination(currentPage, allPages) {
   globalAllPages = allPages;
 
   if (currentPage > 1) {
-    markup += `<li class='arrow'>&#129144;</li>`;
+    markup += `<li class='arrow'><</li>`;
   }
   if (currentPage > 1) {
     markup += `<li class='pagination__link pagination__link--first'>1</li>`;
@@ -52,7 +56,7 @@ export function renderPagination(currentPage, allPages) {
 
   if (allPages > currentPage) {
     markup += `<li class='pagination__link pagination__link--last'>${allPages}</li>`;
-    markup += `<li class='arrow'>&#129146;<li>`;
+    markup += `<li class='arrow'>><li>`;
   }
 
   pagination.innerHTML = markup;
@@ -65,28 +69,30 @@ function handlerPagination(e) {
   if (e.target.textContent === "...") {
     return
   };
-
-  if (e.target.textContent === '🡸') {
+  
+  if (e.target.textContent === '<') {
+    
     globalCurrentpage = globalCurrentpage -= 1
     requesterApi('', globalCurrentpage)
-      .then(data => {
-        renderPagination(data.page, data.total_pages);
-        renderHomeCards(data.results);
-        return;
-      });
+    .then(data => {
+      renderPagination(data.page, data.total_pages);
+      renderHomeCards(data.results);
+      return;
+    });
   };
-
-  if (e.target.textContent === '🡺') {
+  
+  if (e.target.textContent === '>') {
     globalCurrentpage = globalCurrentpage += 1
     requesterApi('', globalCurrentpage)
-      .then(data => {
-        renderPagination(data.page, data.total_pages);
-        renderHomeCards(data.results);
-        return;
+    .then(data => {
+      spinner();
+      renderPagination(data.page, data.total_pages);
+      renderHomeCards(data.results);
+      return;
       });
   };
 
-  if (e.target.textContent !== '🡺' && e.target.textContent !== '🡸') {
+  if (e.target.textContent !== '>' && e.target.textContent !== '<') {
     globalCurrentpage = e.target.textContent
     requesterApi('', globalCurrentpage)
       .then(data => {
@@ -95,4 +101,5 @@ function handlerPagination(e) {
         return;
       });
   };
+
 };

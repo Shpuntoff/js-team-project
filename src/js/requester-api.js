@@ -1,10 +1,14 @@
+import {spinner} from'./spinner.js'
+
 const API_KEY = '1e7c9642f723687d0411097a32c8e17f';
 
 export function requesterApi(requst = '', numOfPage = 1) {
+    spinner();
     let ref = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&page=${numOfPage}&language=en-US`;
     if (requst) {
         ref = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${requst}&page=${numOfPage}&language=en-US`
     };
+
     return fetch(ref)
             .then(response => {
                 if (!response.ok) {
@@ -16,6 +20,7 @@ export function requesterApi(requst = '', numOfPage = 1) {
                 return response;
             })
             .catch(error => console.log(error));
+            
 };
 
 export function requesterApiByID(id) {
