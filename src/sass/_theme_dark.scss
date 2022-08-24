@@ -1,13 +1,23 @@
+
 .conteiner,
 .conteiner-library {
-  position: relative;
+ position: relative;
 }
+
+.dark-theme{
+  background-color: rgb(29 33 37);
+
+  transition: all 500ms;
+}
+
 
 .light {
   position: absolute;
   right: 30px;
   top: 80px;
   // display: none;
+
+
 
   @media screen and (min-width: 768px) {
     // display: block;
@@ -24,7 +34,6 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-
   border: none;
 
   cursor: pointer;
@@ -34,6 +43,7 @@
   .data__content {
     .title {
       color: white;
+      transition: all 300ms;
     }
   }
 }
