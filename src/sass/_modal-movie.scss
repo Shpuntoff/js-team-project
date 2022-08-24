@@ -64,24 +64,24 @@
         align-items: flex-start;
     }
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 .movie-modal__img {
     border-radius: 5px;
-    width: 240px;
-    height: 357px;
 
     @media screen and (max-width: 767px) {
         margin-bottom: 20px;
     }
     @include tablet {
         width: 264px;
-        height: 373.55px;
         margin-right: 68px;
     }
 
     @include desktop {
         width: 375px;
-        height: 478px;
         margin-right: 16px;
     }
 }
@@ -92,6 +92,7 @@
     }
 }
 .movie-modal__title {
+    margin-top: 0px;
     margin-bottom: 20px;
     font-size: 20px;
     line-height: 1.15;
@@ -108,11 +109,16 @@
 }
 
 .movie-modal__properties {
+    display: block;
     flex-shrink: 0;
     margin-right: 40px;
     color: $lightTextColor;
     @include desktop {
         margin-right: 80px;
+    }
+    & li{
+        font-size: 12px;
+        font-weight: 500;
     }
 
     & li:not(:last-child) {
@@ -121,8 +127,13 @@
 }
 
 .movie-modal__values {
+    display: block;
     &:first-child {
         color: $lightTextColor;
+    }
+    & li{
+        font-size: 12px;
+        font-weight: 500;
     }
     & li:not(:last-child) {
         margin-bottom: 8px;
@@ -143,6 +154,7 @@
 }
 
 .movie-modal__about--title {
+    font-size: 12px;
     margin-bottom: 8px;
     font-weight: 500;
     text-transform: uppercase;
@@ -150,7 +162,9 @@
 
 .movie-modal__about--text {
     margin-bottom: 20px;
+    font-size: 12px;
     line-height: 1.67;
+    font-weight: 500;
 }
 
 .modal__watch-button {

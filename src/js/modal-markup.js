@@ -11,9 +11,10 @@ export function modalLibraryMarkup({
     popularity,
     overview,
 }) {
-    let movieGenres = genres.map(genre => genre.name);
-    if (movieGenres.length > 2) {
-        movieGenres = `${movieGenres[0]}, ${movieGenres[1]}, Other`;
+    let movieGenres = 'no information';
+    const movieArr = genres.map(genre => genre.name);
+    if (movieArr.length > 0) {
+      movieGenres = movieArr.join(', ');
     }
     let posterUrl;
     if (!poster_path) {
@@ -40,7 +41,8 @@ export function modalLibraryMarkup({
         <li>${popularity.toFixed(1)}</li>
         <li class="movie-modal__title-original">${original_title}</li>
         <li>${movieGenres}</li>
-      </ul></div>
+      </ul>
+      </div>
       
       <h3 class="movie-modal__about--title">ABOUT</h3>
       <p class="movie-modal__about--text">${overview}</p>
