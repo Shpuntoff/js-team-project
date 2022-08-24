@@ -1,4 +1,4 @@
-import * as basicLightbox from 'basiclightbox'
+import * as basicLightbox from 'basiclightbox';
 import {requesterApiByID} from './requester-api';
 import { modalLibraryMarkup } from './modal-markup';
 
