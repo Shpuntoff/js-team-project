@@ -5,10 +5,11 @@
   right: 0;
   height: 100%;
   width: 100%;
-  z-index: 2;
+  z-index: 10;
+  transition: 600ms;
 
-    opacity: 0;
-    pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 
   &.is-open {
     opacity: 1;
@@ -23,21 +24,19 @@
   transform: translate(-50%, -50%);
   transform-origin: center;
   animation: spin 1500ms linear infinite;
-  stroke: #ff6b01;
+  stroke: $accentColor;
 }
 
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-    stroke: #ffffff
+    stroke: #ffffff;
   }
   50% {
-      stroke: #ff6b01;
-
+    stroke: #ff6b01;
   }
   100% {
     transform: rotate(360deg);
-    stroke: #ffffff
-
+    stroke: #ffffff;
   }
 }
