@@ -20,16 +20,13 @@ const submitHandler = (event) =>{
 
      requesterApi(query, 1)
     .then(data => {
-        console.log(data);
-                renderPagination(data.page, data.total_pages);
-                renderHomeCards(data.results);
-                return;
-              })
-    .catch(() => notifFetch.classList.remove('visually-hidden'))
-
-
-
-
-}
+        if (data.results.length > 1) {
+            renderPagination(data.page, data.total_pages);
+            renderHomeCards(data.results);
+            return;
+        }
+            notifFetch.classList.remove('visually-hidden')
+        })
+  }
 
 formEL.addEventListener('submit', submitHandler);
