@@ -195,3 +195,31 @@
     flex-shrink: 0;
     margin-right: 5px;
 }
+.modal__btns__button {
+    @include button($mainColor);
+
+    width: 110px;
+
+    @include mobile {
+        width: 125px;
+    }
+
+    @include desktop {
+        width: 136px;
+    }
+
+    &:first-child {
+        margin-right: 20px;
+
+        @include tablet {
+            margin-right: 15px;
+        }
+    }
+}
+.modal__btns {
+    display: flex;
+    justify-content: center;
+    @include desktop {
+        justify-content: flex-start;
+    }
+}
