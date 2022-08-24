@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     background: rgba(240, 161, 52, 0.3);
     transition: 1s;
     transform: opacity(1);
@@ -25,7 +25,7 @@
     height: 95%;
     border-radius: 5px;
     background-color: rgb(224, 176, 93);
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   .team-modal__button {
     position: fixed;
