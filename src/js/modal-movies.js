@@ -5,7 +5,6 @@ import {watchedQueue} from './watched-queue'
 
 
 let movieId = 0;
-
 const listRef = document.querySelector('.list',);
 
 listRef.addEventListener('click', onFilmClick);
@@ -18,13 +17,8 @@ async function onFilmClick(e) {
     const movieCard = e.target.closest('li[id]');
     movieId = getId(movieCard);
     const movie = await getMovieById(movieId);
-    console.log(movie);
     openModal(movie);
-
-    watchedQueue();
-
-    console.log(movieId);
-    
+    watchedQueue();    
 }
 function getId(movieCard) {
     return movieCard.id;
@@ -46,30 +40,34 @@ function openModal(movie) {
         
     const moviesModalContent = modalLibraryMarkup(movie);
     const instance = basicLightbox.create(`
-    <div class="modal" id ="${movie.id}">
-    <button type="button" class="movies-modal__close-btn" data-modal-close>
-    <svg class="movies-modal__close-icon" width="16" height="16">
-        <use href="../images/symbol-defs.svg#icon-close"></use>
-    </button>
-  ${moviesModalContent}
-</div>
-`, {
-    onShow: (instance) => {
-        instance.element().querySelector('button[data-modal-close]').onclick = instance.close;
-        window.addEventListener("keydown", onEsc);
-    },
-    onClose: () => {
-        window.removeEventListener("keydown", onEsc);
-    }
-})
+        <div class="modal" id ="${movie.id}">
+        <button type="button" class="movies-modal__close-btn" data-modal-close>
+        <svg class="movies-modal__close-icon" width="16" height="16">
+            <use href="../images/symbol-defs.svg#icon-close"></use>
+        </button>${moviesModalContent}</div>
+    `, {
+        onShow: (instance) => {
+            instance.element().querySelector('button[data-modal-close]').onclick = instance.close;
+            window.addEventListener("keydown", onEsc);
+        },
+        onClose: () => {
+            window.removeEventListener("keydown", onEsc);
+        }
+    });
 
 function onEsc(event) {
     if (event.code === "Escape") {
         instance.close();
-      }
-  }
-instance.show();
-}
+        };
+    };
+    instance.show();
 
-
-
+    const watched = JSON.parse(localStorage.getItem(`watchedMoviesIDs`));
+    const queue = JSON.parse(localStorage.getItem(`queueMoviesIDs`));
+    if (watched.includes(movie.id)) {
+        document.querySelector('.js-addtowatched').textContent = 'remove from watched';
+    };
+    if (queue.includes(movie.id)) {
+        document.querySelector('.js-addtoqueue').textContent = 'remove from queue';
+    };
+};

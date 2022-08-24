@@ -24,7 +24,7 @@ btns.forEach((elem) => {
         if (event.target.textContent === 'Watched') {
             list.innerHTML = '';
             const wMovies = JSON.parse(localStorage.getItem(`watchedMoviesIDs`));
-            if (wMovies) {
+            if (wMovies[0]) {
                 wMovies.forEach(elem => {
                     requesterApiByID(elem)
                         .then(data => {
@@ -37,7 +37,7 @@ btns.forEach((elem) => {
         } else if (event.target.textContent === 'Queue') {
             list.innerHTML = '';
             const qMoviesIDs = JSON.parse(localStorage.getItem(`queueMoviesIDs`));
-            if (qMoviesIDs) {
+            if (qMoviesIDs[0]) {
                 qMoviesIDs.forEach(elem => {
                     requesterApiByID(elem)
                         .then(data => {
@@ -53,8 +53,7 @@ btns.forEach((elem) => {
 
 list.innerHTML = '';
 const wMovies = JSON.parse(localStorage.getItem(`watchedMoviesIDs`));
-imgHolder.classList.add('is-hidden');
-if (wMovies) {
+if (wMovies[0]) {
     wMovies.forEach(elem => {
         requesterApiByID(elem)
             .then(data => {
