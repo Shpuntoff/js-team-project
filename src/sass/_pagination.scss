@@ -17,7 +17,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  color: #000000;
+  color: $mainColor;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -31,8 +31,8 @@
     font-size: 12px;
     line-height: 1.33;
     border-radius: 5px;
-    background: #ff6b08;
-    color: #ffffff;
+    background: $accentColor;
+    color: $whiteColor;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,8 +42,10 @@
 .arrow {
   height: 40px;
   width: 40px;
+  font-weight: 500;
+  
   border-radius: 5px;
-  background: #f7f7f7;
+  background: $whiteColor;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +66,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  color: #000000;
+  color: $mainColor;
   border-radius: 5px;
   display: flex;
   align-items: center;
