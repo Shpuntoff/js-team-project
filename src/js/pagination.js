@@ -27,7 +27,7 @@ export function renderPagination(currentPage, allPages) {
     markup += `<li class='pagination__link pagination__link--first'>1</li>`;
   }
   if (currentPage > 4) {
-    markup += `<li class='pagination__link pagination__link--point'>...</li>`;
+    markup += `<li class='pagination__link--point'>...</li>`;
   }
   if (currentPage > 3) {
     markup += `<li class='pagination__link'>${beforePageTwo}</li>`;
@@ -47,7 +47,7 @@ export function renderPagination(currentPage, allPages) {
   }
 
   if (allPages - 3 > currentPage) {
-    markup += `<li class='pagination__link pagination__link--point'>...</li>`;
+    markup += `<li class='pagination__link--point'>...</li>`;
   }
 
   if (allPages > currentPage) {
