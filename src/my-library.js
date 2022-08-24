@@ -77,3 +77,5 @@ if (wMovies) {
 //     })
 
 // watchedMovies('put', 755566)
+
+import './js/team-modal';
