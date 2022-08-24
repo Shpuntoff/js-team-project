@@ -2,7 +2,7 @@ import { watchedMovies, queueMovies } from './js/user-storage.js';
 import { requesterApi, requesterApiByID, requesterApiGenres } from './js/requester-api.js';
 
 import { renderHomeCards, renderLibraryCards, renderModal, renderWatchedOrQueue } from './js/render.js';
-import './js/modal-movies';
+
 
 const btns = document.querySelectorAll('.header-library__btn')
 const list = document.querySelector('.list')
@@ -79,3 +79,4 @@ if (wMovies) {
 // watchedMovies('put', 755566)
 
 import './js/team-modal';
+import './js/modal-movies';
