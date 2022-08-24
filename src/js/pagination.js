@@ -15,7 +15,7 @@ const pagination = document.querySelector('.pagination');
 pagination.addEventListener('click', handlerPagination);
 
 export function renderPagination(currentPage, allPages) {
-  
+
   let markup = '';
   let nextPage = currentPage + 1;
   let nextPageTwo = currentPage + 2;
@@ -69,9 +69,9 @@ function handlerPagination(e) {
   if (e.target.textContent === "...") {
     return
   };
-  
+
   if (e.target.textContent === '<') {
-    
+
     globalCurrentpage = globalCurrentpage -= 1
     requesterApi('', globalCurrentpage)
     .then(data => {
@@ -80,10 +80,10 @@ function handlerPagination(e) {
       return;
     });
   };
-  
+
   if (e.target.textContent === '>') {
     globalCurrentpage = globalCurrentpage += 1
-    requesterApi('', globalCurrentpage)
+    requesterApi(query, globalCurrentpage)
     .then(data => {
       spinner();
       renderPagination(data.page, data.total_pages);
@@ -94,7 +94,7 @@ function handlerPagination(e) {
 
   if (e.target.textContent !== '>' && e.target.textContent !== '<') {
     globalCurrentpage = e.target.textContent
-    requesterApi('', globalCurrentpage)
+    requesterApi(query, globalCurrentpage)
       .then(data => {
         renderPagination(data.page, data.total_pages)
         renderHomeCards(data.results);
