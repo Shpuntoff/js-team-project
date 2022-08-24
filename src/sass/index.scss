@@ -1,3 +1,5 @@
+@import './variables';
+@import './mixins';
 @import './common';
 @import './header';
 @import './theme_dark';
@@ -8,7 +10,9 @@
 
 @import './header_libery';
 @import './spinner';
-@import './pagination'
+@import './pagination';
+
+@import'./modal-movie';
 
 
 
