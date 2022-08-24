@@ -7,7 +7,6 @@ import svg from '../images/symbol-defs.svg';
 
 
 let movieId = 0;
-
 const listRef = document.querySelector('.list',);
 
 listRef.addEventListener('click', onFilmClick);
@@ -20,13 +19,8 @@ async function onFilmClick(e) {
     const movieCard = e.target.closest('li[id]');
     movieId = getId(movieCard);
     const movie = await getMovieById(movieId);
-    console.log(movie);
     openModal(movie);
-
-    watchedQueue();
-
-    console.log(movieId);
-    
+    watchedQueue();    
 }
 function getId(movieCard) {
     return movieCard.id;
@@ -70,10 +64,16 @@ function openModal(movie) {
 function onEsc(event) {
     if (event.code === "Escape") {
         instance.close();
-      }
-  }
-instance.show();
-}
+        };
+    };
+    instance.show();
 
-
-
+    const watched = JSON.parse(localStorage.getItem(`watchedMoviesIDs`));
+    const queue = JSON.parse(localStorage.getItem(`queueMoviesIDs`));
+    if (watched.includes(movie.id)) {
+        document.querySelector('.js-addtowatched').textContent = 'remove from watched';
+    };
+    if (queue.includes(movie.id)) {
+        document.querySelector('.js-addtoqueue').textContent = 'remove from queue';
+    };
+};
