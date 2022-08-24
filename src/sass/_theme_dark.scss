@@ -1,26 +1,33 @@
-.dark-theme {
+
+.conteiner,
+.conteiner-library {
+ position: relative;
+}
+
+.dark-theme{
   background-color: rgb(29 33 37);
 
   transition: all 500ms;
 }
 
-.conteiner {
-  position: relative;
-}
 
 .light {
   position: absolute;
   right: 30px;
-  top: 123px;
-  display: none;
+  top: 80px;
+  // display: none;
+
+
 
   @media screen and (min-width: 768px) {
-    display: block;
+    // display: block;
+    right: 30px;
+  top: 123px;
   }
 }
 
 .btn-theme {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -39,28 +46,4 @@
       transition: all 300ms;
     }
   }
-
-  .pagination__link, .pagination__link--point {
-    color: white;
-    transition: all 300ms;
-  }
-}
-
-.dark-theme .btn-theme,
-.light-theme .btn-theme {
-  display: flex;
-}
-
-.dark-theme .theme-night-icon {
-  display: block;
-}
-.dark-theme .theme-light-icon {
-  display: none;
-}
-
-.light-theme .theme-night-icon {
-  display: none;
-}
-.light-theme .theme-light-icon {
-  display: block;
 }
