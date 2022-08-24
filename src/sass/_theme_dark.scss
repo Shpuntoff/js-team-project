@@ -1,5 +1,10 @@
-.header,
-.header-library {
+.dark-theme{
+  background-color: rgb(29 33 37);
+
+  transition: all 500ms;
+}
+
+.conteiner{
   position: relative;
 }
 
@@ -8,6 +13,8 @@
   right: 30px;
   top: 123px;
   display: none;
+
+
 
   @media screen and (min-width: 768px) {
     display: block;
@@ -22,7 +29,6 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-
   border: none;
 
   cursor: pointer;
@@ -32,6 +38,7 @@
   .data__content {
     .title {
       color: white;
+      transition: all 300ms;
     }
   }
 }
