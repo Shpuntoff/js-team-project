@@ -1,7 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import {requesterApiByID} from './requester-api';
 import { modalLibraryMarkup } from './modal-markup';
-
+import {watchedQueue} from './watched-queue'
 
 let movieId = 0;
 
@@ -19,6 +19,8 @@ async function onFilmClick(e) {
     const movie = await getMovieById(movieId);
     console.log(movie);
     openModal(movie);
+
+    watchedQueue();
 
     console.log(movieId);
     

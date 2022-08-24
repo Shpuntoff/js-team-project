@@ -36,7 +36,6 @@ btns.forEach((elem) => {
         } else if (event.target.textContent === 'Queue') {
             list.innerHTML = '';
             const qMoviesIDs = JSON.parse(localStorage.getItem(`queueMoviesIDs`));
-            imgHolder.classList.add('is-hidden');
             if (qMoviesIDs) {
                 qMoviesIDs.forEach(elem => {
                     requesterApiByID(elem)
