@@ -18,7 +18,7 @@ const submitHandler = (event) =>{
     // return;
 
 
-     requesterApi(query, numOfPage = 1)
+     requesterApi(query, 1)
     .then(data => {
         console.log(data);
                 renderPagination(data.page, data.total_pages);
