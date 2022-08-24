@@ -5,8 +5,10 @@ import { renderHomeCards, renderLibraryCards, renderModal } from './js/render.js
 import {renderPagination} from './js/pagination.js';
 import { btn } from './js/theme-lite-dark.js'
 import {scrollBtn} from './js/scroll.js'
+
 // import {openModal} from'./js/modal-movies'
 
+import './js/spinner';
 
 
 requesterApiGenres()
@@ -23,6 +25,8 @@ requesterApi()
 import './js/modal-movies';
     
 import './js/pagination';
+
+
 
     
 
