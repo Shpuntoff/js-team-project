@@ -5,7 +5,7 @@ import {
 } from './requester-api.js';
 import {renderHomeCards} from './render.js';
 
-let globalCurrentpage
+let globalCurrentpage = 1
 let globalAllPages
 
 const pagination = document.querySelector('.pagination');
@@ -59,47 +59,40 @@ export function renderPagination(currentPage, allPages) {
 }
 
 function handlerPagination(e) {
-  // let markup = '';
   if (e.target.nodeName !== 'LI') {
     return;
   }
   if (e.target.textContent === "...") {
     return
-  }
-
-//   globalCurrentpage = e.target.textContent
-//   requesterApi(requst = '', globalCurrentpage)
-//  .then(data => {
-//    renderPagination(data.page, data.total_pages)
-//    renderHomeCards(data.results);
-//    console.log(globalCurrentpage);
-//      return;
-//  })
-
+  };
 
   if (e.target.textContent === '🡸') {
-    requesterApi(requst = '', globalCurrentpage -= 1)
-    .then(data => {
-      renderPagination(data.page, data.total_pages)
-      renderHomeCards(data.results);
-   console.log(globalCurrentpage);
-
+    globalCurrentpage = globalCurrentpage -= 1
+    requesterApi('', globalCurrentpage)
+      .then(data => {
+        renderPagination(data.page, data.total_pages);
+        renderHomeCards(data.results);
         return;
-    })
-  }
+      });
+  };
 
   if (e.target.textContent === '🡺') {
-    requesterApi(requst = '', globalCurrentpage += 1)
-    .then(data => {
-      renderPagination(data.page, data.total_pages)
-      renderHomeCards(data.results);
-   console.log(globalCurrentpage);
-
+    globalCurrentpage = globalCurrentpage += 1
+    requesterApi('', globalCurrentpage)
+      .then(data => {
+        renderPagination(data.page, data.total_pages);
+        renderHomeCards(data.results);
         return;
-    })
-     }
+      });
+  };
 
-    
-
-  
-}
+  if (e.target.textContent !== '🡺' && e.target.textContent !== '🡸') {
+    globalCurrentpage = e.target.textContent
+    requesterApi('', globalCurrentpage)
+      .then(data => {
+        renderPagination(data.page, data.total_pages)
+        renderHomeCards(data.results);
+        return;
+      });
+  };
+};

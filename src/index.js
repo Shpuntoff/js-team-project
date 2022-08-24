@@ -20,7 +20,9 @@ requesterApi()
 
     import './js/team-modal';
 
-    import './js/modal-movies';
+import './js/modal-movies';
+    
+import './js/pagination';
 
     
 
