@@ -3,6 +3,7 @@ import {requesterApiByID} from './requester-api';
 import { modalLibraryMarkup } from './modal-markup';
 import {watchedQueue} from './watched-queue'
 
+
 let movieId = 0;
 
 const listRef = document.querySelector('.list',);
@@ -47,6 +48,8 @@ function openModal(movie) {
     const instance = basicLightbox.create(`
     <div class="modal" id ="${movie.id}">
     <button type="button" class="movies-modal__close-btn" data-modal-close>
+    <svg class="movies-modal__close-icon" width="16" height="16">
+        <use href="../images/symbol-defs.svg#icon-close"></use>
     </button>
   ${moviesModalContent}
 </div>
