@@ -1,18 +1,22 @@
 const scrollBtn = document.querySelector('.scroll__link');
 const scrollToUp = document.querySelector('.scroll__wrapper');
+const body = document.querySelector('body')
 
 scrollBtn.addEventListener('click', onScrollUp);
 
 function onScrollUp(ev) {
   ev.preventDefault();
 
-  window.scrollTo(0, -200);
+  body.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  })
 }
 
 window.onscroll = () => {
   if (window.scrollY > 300) {
     scrollToUp.classList.remove('scroll__isHiden');
-  } else if (window.scrollY < 300) {
+  } else {
     scrollToUp.classList.add('scroll__isHiden');
   }
 };
