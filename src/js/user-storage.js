@@ -26,7 +26,7 @@ export function queueMovies(ection, data) {
             const queue = JSON.parse(localStorage.getItem(`queueMoviesIDs`));
             if (!queue.includes(data)) {
                 queue.push(data);
-                localStorage.setItem(`queueMoviesIDss`, JSON.stringify(queue));
+                localStorage.setItem(`queueMoviesIDs`, JSON.stringify(queue));
             };
         } else {
             localStorage.setItem(`queueMoviesIDs`, JSON.stringify([data]));
