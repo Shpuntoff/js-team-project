@@ -43,7 +43,7 @@ function openModal(movie) {
         
     const moviesModalContent = modalLibraryMarkup(movie);
     const instance = basicLightbox.create(`
-    <div class="modal">
+    <div class="modal" id ="${movie.id}">
     <button type="button" class="movies-modal__close-btn" data-modal-close>
     </button>
   ${moviesModalContent}
