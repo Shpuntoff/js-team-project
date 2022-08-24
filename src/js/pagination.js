@@ -6,6 +6,9 @@ import {
 import {renderHomeCards} from './render.js';
 import {spinner} from'./spinner.js'
 import {onScrollUp} from './scroll'
+import {spinner} from'./spinner.js'
+import {query} from'./fetchTitle.js'
+ 
 
 
 let globalCurrentpage = 1
@@ -63,6 +66,8 @@ export function renderPagination(currentPage, allPages) {
 }
 
 function handlerPagination(e) {
+console.log(e.target.textContent); 
+
   if (e.target.nodeName !== 'LI') {
     return;
   }
@@ -73,7 +78,7 @@ function handlerPagination(e) {
   if (e.target.textContent === '<') {
 
     globalCurrentpage = globalCurrentpage -= 1
-    requesterApi('', globalCurrentpage)
+    requesterApi(query, globalCurrentpage)
     .then(data => {
       renderPagination(data.page, data.total_pages);
       renderHomeCards(data.results);

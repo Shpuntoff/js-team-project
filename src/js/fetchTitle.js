@@ -7,12 +7,11 @@ const formEL = document.querySelector('.form');
 const inputEL = document.querySelector('.input');
 const notifFetch = document.querySelector('.notif');
 const contentBoxEl = document.querySelector('.list')
-
-
+export let query;
 
 const submitHandler = (event) =>{
     event.preventDefault();
-    query =inputEL.value.trim();
+    query =inputEL.value;
     console.log(query);
     // notifFetch.classList.remove('visually-hidden');
     // if (!query)

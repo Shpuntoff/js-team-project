@@ -1,7 +1,7 @@
 import {spinner} from'./spinner.js'
 
 const API_KEY = '1e7c9642f723687d0411097a32c8e17f';
-let query;
+
 export function requesterApi(requst = '', numOfPage = 1) {
     spinner();
     let ref = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&page=${numOfPage}&language=en-US`;
