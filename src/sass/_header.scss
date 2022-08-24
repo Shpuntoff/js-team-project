@@ -69,8 +69,6 @@ ul {
 }
 
 .conteiner {
- 
-
   margin-left: auto;
   margin-right: auto;
   max-width: 320px;
@@ -80,7 +78,6 @@ ul {
   @media screen and (min-width: 768px) {
     max-width: 1280px;
   }
-
 
   padding: 44px 22px;
   @media screen and (min-width: 768px) {
@@ -175,7 +172,7 @@ ul {
   background-color: transparent;
   border: none;
   outline: none;
-color: $whiteColor;
+  color: $whiteColor;
   width: 100%;
 }
 .input::placeholder {
@@ -196,5 +193,3 @@ color: $whiteColor;
   background-color: transparent;
   border: none;
 }
-
-

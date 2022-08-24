@@ -13,6 +13,8 @@ body {
   transition: background-color 300ms;
 }
 
+
+
 .footer-container {
   font-style: normal;
   background: #f7f7f7;
@@ -42,6 +44,17 @@ body {
     margin-bottom: 10px;
     padding-top: 28px;
   }
+}
+
+.copyright-accent {
+  color: #ff6b08;
+  font-weight: 600;
+}
+.copyright-logo {
+  color: black;
+  font-weight: 600;
+  margin-right: -4px;
+  background-color: transparent;
 }
 
 .footer-icon {
@@ -82,7 +95,7 @@ body {
 
 .footer-button:hover,
 .footer-button:focus {
-  background-color: #ff6b08;
+  background-color: #b98d6e;
   border-radius: 5px;
   color: #fff;
 }

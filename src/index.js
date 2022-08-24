@@ -23,14 +23,14 @@ requesterApi()
 import './js/team-modal';
 
 import './js/modal-movies';
-    
+
 import './js/pagination';
 
+import './js/fetchTitle';
 
 
 
-    
 
-    
-    
+
+
     // instance.show()
