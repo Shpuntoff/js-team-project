@@ -1,16 +1,18 @@
-.header,
-.header-library {
+.conteiner,
+.conteiner-library {
   position: relative;
 }
 
 .light {
   position: absolute;
   right: 30px;
-  top: 123px;
-  display: none;
+  top: 80px;
+  // display: none;
 
   @media screen and (min-width: 768px) {
-    display: block;
+    // display: block;
+    right: 30px;
+  top: 123px;
   }
 }
 

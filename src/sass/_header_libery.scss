@@ -1,10 +1,10 @@
-* {
-  text-decoration: none;
-  list-style-type: none;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+// * {
+//   text-decoration: none;
+//   list-style-type: none;
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+// }
 
 .visually-hidden {
   position: absolute;
@@ -22,14 +22,14 @@
 
 .header-library {
   // background-color: black;
-  max-width: 320px;
+  max-width: 100vw;
   height: 230px;
   background-image: url('../images/Rectangle_mob.jpg');
   background-size: 230px 320px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   margin: 0 auto;
-  padding-top: 42px;
+  // padding-top: 42px;
 
   @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
@@ -39,15 +39,15 @@
   }
 
   @media screen and (min-width: 768px) {
-    max-width: 768px;
-    width: 100%;
+    max-width: 100vw;
+   
 
-    padding-top: 40px;
+    // padding-top: 40px;
 
     background-image: url('../images/Rectangle_tablet.jpg');
     background-size: 216px, 768px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -59,14 +59,15 @@
 
   @media screen and (min-width: 1280px) {
     max-width: 1280px;
-    width: 100%;
+    max-width: 100vw;
+    // width: 100%;
     height: 216px;
     background-image: url('../images/Rectangle_desktop.jpg');
     background-size: 216px, 1280px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 
-    padding-top: 40px;
+    // padding-top: 40px;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -147,7 +148,7 @@
       bottom: -2px;
       left: 0;
       height: 3px;
-      background-color: #ff001b;
+      background-color: $secondAccentColor;
       border-radius: 2px;
     }
   }
@@ -168,14 +169,24 @@
 }
 
 .conteiner-library {
-  padding-right: 20px;
-  padding-left: 22px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
+
+  padding: 44px 22px;
+  // padding-right: 20px;
+  // padding-left: 22px;
   display: flex;
   flex-wrap: wrap;
 
   @media screen and (min-width: 768px) {
-    padding-right: 32px;
-    padding-left: 32px;
+    max-width: 768px;
+    // padding-right: 32px;
+    // padding-left: 32px;
+    padding: 44px 32px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 1280px;
   }
 }
 
@@ -215,20 +226,20 @@
   background: transparent;
   background-color: transparent;
 
-  color: #ffffff;
+  color: $whiteColor;
   cursor: pointer;
-  border: 1px solid #ffffff;
+  border: 1px solid $whiteColor;
   border-radius: 5px;
 
   &--active {
-    background-color: #ff6b01;
-    border: 1px solid #ff6b01;
+    background-color: $accentColor;
+    border: 1px solid $accentColor;
     box-shadow: 0 0 20px rgb(255 107 1 / 50%);
   }
 
   &:hover {
-    background-color: #ff6b01;
-    border: 1px solid #ff6b01;
+    background-color: $accentColor;
+    border: 1px solid $accentColor;
     box-shadow: 0 0 20px rgb(255 107 1 / 50%);
   }
 
@@ -255,3 +266,5 @@
     }
   }
 }
+
+
