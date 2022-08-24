@@ -5,9 +5,6 @@ import { modalLibraryMarkup } from './modal-markup';
 
 let movieId = 0;
 
-
-
-
 const listRef = document.querySelector('.list',);
 
 listRef.addEventListener('click', onFilmClick);
