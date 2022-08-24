@@ -93,5 +93,5 @@ export function renderWatchedOrQueue({ id, genres, poster_path, title, release_d
                         <p  class="text">${currentGenres.join(', ')} | ${release_date ? release_date.slice(0, 4) : 2022} ${vote_average.toFixed(1)}</p>
                     </div>
                 </li>`;
-    document.querySelector('.list').insertAdjacentHTML('beforeend', data);
+    document.querySelector('.movies-modal').insertAdjacentHTML('beforeend', data);
 };
