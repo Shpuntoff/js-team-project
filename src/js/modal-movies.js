@@ -70,10 +70,10 @@ function onEsc(event) {
 
     const watched = JSON.parse(localStorage.getItem(`watchedMoviesIDs`));
     const queue = JSON.parse(localStorage.getItem(`queueMoviesIDs`));
-    if (watched.includes(movie.id)) {
+    if (watched && watched.includes(movie.id)) {
         document.querySelector('.js-addtowatched').textContent = 'remove from watched';
     };
-    if (queue.includes(movie.id)) {
+    if (queue && queue.includes(movie.id)) {
         document.querySelector('.js-addtoqueue').textContent = 'remove from queue';
     };
 };
