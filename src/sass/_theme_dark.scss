@@ -23,7 +23,7 @@
 }
 
 .btn-theme {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
@@ -33,6 +33,11 @@
   border: none;
 
   cursor: pointer;
+
+  .theme-night-icon{
+    display: none;
+  }
+
 }
 
 .dark-theme .btn-theme,
