@@ -1,59 +1,62 @@
-<header class="header-library">
-  <!-- <div class="header-library"> -->
-  <div class="conteiner-library">
-    <nav class="conteiner-library__nav">
-      <div class="header-library__logo">
-        <a href="./index.html"  class="logo"
-          ><svg width="24" height="24" aria-label="logo">
-            <use href="./images/symbol-defs.svg#icon-film-min"></use>
-          </svg>
-          <span class="header-library__title">Filmoteka</span>
-        </a>
-      </div>
+<header>
+  <div class="header-library">
+    <div class="conteiner-library">
+      <nav class="conteiner-library__nav">
+        <div class="header-library__logo">
+          <a href="./index.html" class="logo"
+            ><svg width="24" height="24" aria-label="logo">
+              <use href="./images/symbol-defs.svg#icon-film-min"></use>
+            </svg>
+            <span class="header-library__title">Filmoteka</span>
+          </a>
+        </div>
 
-      <div class="header-library-nav-list__page">
-        <ul class="header-library-nav__list">
-          <li class="header-library-nan__item">
-            <a class="header-library-nav__text" href="./index.html">Home</a>
-          </li>
-          <li
-            class="header-library-nan__item header-library-nan__item--current"
+        <div class="header-library-nav-list__page">
+          <ul class="header-library-nav__list">
+            <li class="header-library-nan__item">
+              <a class="header-library-nav__text" href="./index.html">Home</a>
+            </li>
+            <li
+              class="header-library-nan__item header-library-nan__item--current"
+            >
+              <a class="header-library-nav__text" href="">My library</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <ul class="header-library__list">
+        <li class="header-library__item">
+          <button
+            class="header-library__btn header-library__btn--active"
+            type="button"
           >
-            <a class="header-library-nav__text" href="">My library</a>
-          </li>
-        </ul>
+            Watched
+          </button>
+        </li>
+        <li class="header-library__item">
+          <button class="header-library__btn" type="button">Queue</button>
+        </li>
+      </ul>
+      <!-- change theme -->
+      <div id="app" class="light button-theme">
+        <button class="btn-theme">
+          <span class="material-symbols-outlined theme-light-icon">
+            light_mode
+          </span>
+          <span class="material-symbols-outlined theme-night-icon">
+            dark_mode
+          </span>
+        </button>
       </div>
-    </nav>
-
-    <ul class="header-library__list">
-      <li class="header-library__item">
-        <button
-          class="header-library__btn header-library__btn--active"
-          type="button"
-        >Watched</button>
-      </li>
-      <li class="header-library__item">
-        <button class="header-library__btn" type="button">Queue</button>
-      </li>
-    </ul>
-    <!-- change theme -->
-    <div id="app" class="light button-theme">
-      <button class="btn-theme">
-        <span class="material-symbols-outlined theme-light-icon">
-          light_mode
-        </span>
-        <span class="material-symbols-outlined theme-night-icon">
-          dark_mode
-        </span>
-      </button>
-    </div>
-    <!-- Scroll to UP -->
-    <div class="scroll__wrapper scroll__isHiden">
-      <button type="button" class="scroll__link">
-        <span class="material-symbols-outlined scroll">
-          keyboard_double_arrow_up
-        </span>
-      </button>
+      <!-- Scroll to UP -->
+      <div class="scroll__wrapper scroll__isHiden">
+        <button type="button" class="scroll__link">
+          <span class="material-symbols-outlined scroll">
+            keyboard_double_arrow_up
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </header>
