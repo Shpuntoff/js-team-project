@@ -103,17 +103,14 @@
 
     transition: all ease-in 550ms;
 
-    &:hover{
+    &:hover {
       transform: scale(1.05);
     }
   }
 }
 
-
-
 .data__content {
   padding-top: 12px;
-
 
   .title {
     color: black;
@@ -144,6 +141,19 @@
 
       max-width: 395px;
     }
+  }
+
+  .card-raiting {
+    display: inline-block;
+    padding: 3px 11px;
+
+    font-size: 12px;
+    line-height: 1.2;
+    background-color: #ff6b08;
+    color: white;
+
+    border-radius: 5px;
+    margin-left: 8px;
   }
 }
 
