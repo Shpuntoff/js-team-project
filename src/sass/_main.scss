@@ -132,6 +132,8 @@
     font-size: 12px;
     line-height: 1.2;
     max-width: 280px;
+    display: flex;
+    align-items: center;
 
     @media screen and (min-width: 1280px) {
       font-style: normal;
