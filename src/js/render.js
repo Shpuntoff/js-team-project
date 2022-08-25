@@ -14,8 +14,8 @@ export function renderHomeCards(array) {
                             </div>
                             <div class="data__content">
                                 <h2 class="title">${title}</h2>
-                                <p class="text">${currentGenres.join(', ')} ${currentGenres[0] && release_date ? '|' : ''} 
-                                ${release_date ? `${release_date.slice(0, 4)}` : ''} ${vote_average.toFixed(1)}</p>
+                                <p class="text">${currentGenres.join(', ')} ${currentGenres[0] && release_date ? '|' : ''}
+                                ${release_date ? `${release_date.slice(0, 4)}` : ''} <span class="card-raiting">${vote_average.toFixed(1)}</span></p>
                             </div>
                         </li>`
     }, '');
@@ -35,7 +35,7 @@ export function renderHomeCards(array) {
 //                             </div>
 //                             <div class="data__content">
 //                                 <h2 class="title">${name ? name : title}</h2>
-//                                 <p class="text">${currentGenres.join(', ')} ${currentGenres[0] && release_date ? '|' : ''} 
+//                                 <p class="text">${currentGenres.join(', ')} ${currentGenres[0] && release_date ? '|' : ''}
 //                                 ${release_date ? `${release_date.slice(0, 4)}` : ''} ${vote_average.toFixed(1)}</p>
 //                             </div>
 //                         </li>`
@@ -82,7 +82,7 @@ export function renderWatchedOrQueue({ id, genres, poster_path, title, release_d
                     </div>
                     <div class="data__content">
                         <h2 class="title">${title}</h2>
-                        <p class="text">${currentGenres.join(', ')} ${currentGenres[0] && release_date ? '|' : ''} 
+                        <p class="text">${currentGenres.join(', ')} ${currentGenres[0] && release_date ? '|' : ''}
                         ${release_date ? `${release_date.slice(0, 4)}` : ''} ${vote_average.toFixed(1)}</p>
                     </div>
                 </li>`;
