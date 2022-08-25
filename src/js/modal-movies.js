@@ -2,7 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import {requesterApiByID} from './requester-api';
 import { modalLibraryMarkup } from './modal-markup';
 import {watchedQueue} from './watched-queue'
-
+import { rerender } from './render';
 import svg from '../images/symbol-defs.svg';
 
 
@@ -58,6 +58,7 @@ function openModal(movie) {
     },
     onClose: () => {
         window.removeEventListener("keydown", onEsc);
+        rerender();
     }
 })
 
