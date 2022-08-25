@@ -34,10 +34,9 @@
 
   cursor: pointer;
 
-  .theme-night-icon{
+  .theme-night-icon {
     display: none;
   }
-
 }
 
 .dark-theme .btn-theme,
@@ -74,41 +73,41 @@
 }
 
 // Modal - Movie  Dark Theme
-.dark-theme{
-  .modal{
-  background-color: rgb(29 33 37);
-  color: white;
+.dark-theme {
+  .modal {
+    background-color: rgb(29 33 37);
+    color: white;
   }
 
-  .movies-modal__close-btn{
-    .movies-modal__close-icon{
+  .movies-modal__close-btn {
+    .movies-modal__close-icon {
       fill: white;
+
+      &:hover {
+        fill: $accentColor;
+      }
     }
   }
 
-  .modal__btns__button{
-  color: white;
+  .modal__btns__button {
+    color: white;
     border: 1px solid white;
   }
 
-
-  .movie-modal__vote-count{
+  .movie-modal__vote-count {
     color: black;
   }
 }
 
-
 // Footer Dark - theme
-.dark-theme{
-  .footer-container{
+.dark-theme {
+  .footer-container {
     color: white;
     background-color: rgb(18, 19, 21);
   }
 
-  .copyright-logo, .footer-text{
+  .copyright-logo,
+  .footer-text {
     color: white;
-
   }
 }
-
-
