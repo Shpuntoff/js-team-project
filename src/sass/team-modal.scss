@@ -28,6 +28,14 @@
   background-size:auto;
   background-repeat:round;
   overflow-y: auto;
+
+}
+
+@media (max-width: 767px) {
+  .team-modal{
+background: none;
+background-color: #ffffff;
+  }
 }
 
 .team-audio{
@@ -132,8 +140,8 @@
     border-radius: 5%;
     width: 148px;
     border-radius: 50%;
-  background-size: cover;
-  transition: transform .25s cubic-bezier(.4,0,.2,1);
+    background-size: cover;
+    transition: transform .25s cubic-bezier(.4,0,.2,1);
   }
 }
 .team-role {
