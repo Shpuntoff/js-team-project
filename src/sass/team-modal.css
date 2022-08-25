@@ -30,6 +30,11 @@
   overflow-y: auto;
 }
 
+@media (max-width: 767px) {
+  .team-modal {
+    background: none;
+  }
+}
 .team-audio {
   margin-left: auto;
   margin-right: auto;
