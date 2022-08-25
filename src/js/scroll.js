@@ -4,7 +4,7 @@ const body = document.querySelector('body')
 
 scrollBtn.addEventListener('click', onScrollUp);
 
-function onScrollUp(ev) {
+export function onScrollUp(ev) {
   ev.preventDefault();
 
   body.scrollIntoView({

@@ -5,7 +5,7 @@ import {
 } from './requester-api.js';
 import {renderHomeCards} from './render.js';
 import {spinner} from'./spinner.js'
-import {onScrollUp} from './scroll'
+import {onScrollUp} from './scroll.js'
 import {spinner} from'./spinner.js'
 import {query} from'./fetchTitle.js'
  
@@ -18,7 +18,6 @@ const pagination = document.querySelector('.pagination');
 pagination.addEventListener('click', handlerPagination);
 
 export function renderPagination(currentPage, allPages) {
-
   let markup = '';
   let nextPage = currentPage + 1;
   let nextPageTwo = currentPage + 2;
@@ -63,10 +62,12 @@ export function renderPagination(currentPage, allPages) {
   }
 
   pagination.innerHTML = markup;
+  
+
 }
 
 function handlerPagination(e) {
-console.log(e.target.textContent); 
+  console.log(e.target.textContent); 
 
   if (e.target.nodeName !== 'LI') {
     return;
@@ -82,6 +83,8 @@ console.log(e.target.textContent);
     .then(data => {
       renderPagination(data.page, data.total_pages);
       renderHomeCards(data.results);
+      onScrollUp(e)
+
       return;
     });
   };
@@ -93,6 +96,10 @@ console.log(e.target.textContent);
       spinner();
       renderPagination(data.page, data.total_pages);
       renderHomeCards(data.results);
+      onScrollUp(e)
+
+     
+
       return;
       });
   };
@@ -103,6 +110,8 @@ console.log(e.target.textContent);
       .then(data => {
         renderPagination(data.page, data.total_pages)
         renderHomeCards(data.results);
+        onScrollUp(e)
+
         return;
       });
   };
