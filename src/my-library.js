@@ -1,11 +1,13 @@
-import { requesterApiByID, requesterApiGenres } from './js/requester-api.js';
-import { renderWatchedOrQueue } from './js/render.js';
+import { watchedMovies, queueMovies } from './js/user-storage.js';
+import { requesterApi, requesterApiByID, requesterApiGenres } from './js/requester-api.js';
+import { renderHomeCards, renderLibraryCards, renderModal, renderWatchedOrQueue } from './js/render.js';
+import { btn } from './js/theme-lite-dark.js'
 
 const btns = document.querySelectorAll('.header-library__btn')
 const list = document.querySelector('.list')
 const imgHolder = document.querySelector('.wrapper-holder')
 
-requesterApiGenres()
+requesterApiGenres();
 
 btns.forEach((elem) => {
     elem.addEventListener('click', (event) => {
