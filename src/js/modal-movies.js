@@ -55,9 +55,11 @@ function openModal(movie) {
     onShow: (instance) => {
         instance.element().querySelector('button[data-modal-close]').onclick = instance.close;
         window.addEventListener("keydown", onEsc);
+        document.body.setAttribute('style', 'overflow: hidden');
     },
     onClose: () => {
         window.removeEventListener("keydown", onEsc);
+        document.body.removeAttribute('style');
         rerender();
     }
 })
