@@ -1,8 +1,9 @@
 import * as basicLightbox from 'basiclightbox';
-import {requesterApiByID} from './requester-api';
+import { requesterApiByID } from './requester-api';
 import { modalLibraryMarkup } from './modal-markup';
-import {watchedQueue} from './watched-queue'
+import { watchedQueue } from './watched-queue'
 import { rerender } from './render';
+import { spinnerStop } from './spinner.js'
 import svg from '../images/symbol-defs.svg';
 
 
@@ -29,6 +30,7 @@ function getId(movieCard) {
 async function getMovieById(movieId) {
     try {
         const movie = await requesterApiByID(movieId);
+        await spinnerStop();
         return movie;
     } catch (error) {
         console.log(error);

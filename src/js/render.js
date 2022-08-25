@@ -1,5 +1,6 @@
 import imgDefault from '../images/noposter.jpg';
-import { requesterApi, requesterApiByID, requesterApiGenres } from './requester-api.js';
+import { spinnerStop } from './spinner.js'
+import { requesterApiByID } from './requester-api.js';
 
 const list = document.querySelector('.list');
 const imgHolder = document.querySelector('.wrapper-holder');
@@ -65,6 +66,7 @@ export function renderWatched() {
             requesterApiByID(elem)
                 .then(data => {
                     renderWatchedOrQueue(data);
+                    spinnerStop();
                 });
         });
     } else {
@@ -81,6 +83,7 @@ export function renderQueue() {
             requesterApiByID(elem)
                 .then(data => {
                     renderWatchedOrQueue(data);
+                    spinnerStop();
                 });
         });
     } else {
