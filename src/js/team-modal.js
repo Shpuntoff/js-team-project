@@ -12,11 +12,7 @@
       closeModalBtn.addEventListener('click', closeModal);
       modal.addEventListener('click', backdropCloseModal);
       body.classList.add('scroll-hidden');
-
-      window.addEventListener('scroll', (e) => {
-      window.scrollTo(0,0);
-      });
-      
+      document.body.style.overflow = 'hidden';
     }
     function closeModal() {
       body.classList.remove('scroll-hidden');
@@ -35,7 +31,4 @@
         closeModal();
       }
     }
-   
-
-   
   })();
