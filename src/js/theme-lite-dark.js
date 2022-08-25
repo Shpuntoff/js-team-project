@@ -22,10 +22,12 @@ function onClickChangeTheme(ev) {
 
     body.classList.add('light-theme');
     localStorage.setItem('theme', 'light-theme');
+
   } else {
     body.classList.remove('light-theme');
 
     body.classList.add('dark-theme');
     localStorage.setItem('theme', 'dark-theme');
+    
   }
 }
