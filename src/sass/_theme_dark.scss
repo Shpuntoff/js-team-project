@@ -67,3 +67,43 @@
 .light-theme .theme-light-icon {
   display: block;
 }
+
+// Modal - Movie  Dark Theme
+.dark-theme{
+  .modal{
+  background-color: rgb(29 33 37);
+  color: white;
+  }
+
+  .movies-modal__close-btn{
+    .movies-modal__close-icon{
+      fill: white;
+    }
+  }
+
+  .modal__btns__button{
+  color: white;
+    border: 1px solid white;
+  }
+
+
+  .movie-modal__vote-count{
+    color: black;
+  }
+}
+
+
+// Footer Dark - theme
+.dark-theme{
+  .footer-container{
+    color: white;
+    background-color: rgb(18, 19, 21);
+  }
+
+  .copyright-logo, .footer-text{
+    color: white;
+
+  }
+}
+
+
