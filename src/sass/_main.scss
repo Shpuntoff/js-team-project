@@ -1,7 +1,8 @@
 .main {
   padding-top: 60px;
-
   box-sizing: border-box;
+  min-height: 100%;
+  flex: 1 1 auto;
 }
 
 .container {
