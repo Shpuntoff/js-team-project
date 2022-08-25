@@ -1,5 +1,4 @@
 import { watchedMovies, queueMovies } from './user-storage';
-import { onFilmClick } from './modal-movies';
 
 export function watchedQueue() {
     const modal = document.querySelector('.modal');

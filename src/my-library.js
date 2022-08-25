@@ -1,15 +1,9 @@
-import { watchedMovies, queueMovies } from './js/user-storage.js';
-import { requesterApi, requesterApiByID, requesterApiGenres } from './js/requester-api.js';
-
-import { renderHomeCards, renderLibraryCards, renderModal, renderWatchedOrQueue } from './js/render.js';
-
+import { requesterApiByID, requesterApiGenres } from './js/requester-api.js';
+import { renderWatchedOrQueue } from './js/render.js';
 
 const btns = document.querySelectorAll('.header-library__btn')
 const list = document.querySelector('.list')
 const imgHolder = document.querySelector('.wrapper-holder')
-
-import { btn } from './js/theme-lite-dark.js'
-
 
 requesterApiGenres()
 
@@ -63,19 +57,6 @@ if (wMovies && wMovies[0]) {
 } else {
     imgHolder.classList.remove('is-hidden');
 };
-
-// requesterApi()
-//     .then(data => {
-//         renderLibraryCards(data.results)
-//     })
-
-
-// requesterApiByID(361743)
-//     .then(data => {
-//         renderModal(data)
-//     })
-
-// watchedMovies('put', 755566)
 
 import './js/team-modal';
 import './js/modal-movies';
