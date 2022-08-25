@@ -44,7 +44,7 @@ function openModal(movie) {
     const instance = basicLightbox.create(`
     <div class="modal" id ="${movie.id}">
     <button type="button" class="movies-modal__close-btn" data-modal-close>
-    <svg class="movies-modal__close-icon" width="20" height="20">
+    <svg class="movies-modal__close-icon" width="14" height="14">
     Xsdafsdf
         <use href="${svg}#icon-x"></use>
         </svg>

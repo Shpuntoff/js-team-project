@@ -52,12 +52,8 @@
 }
 
 .movies-modal__close-icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: black;
+    fill: currentColor;
+    flex-shrink: 0;
 }
 
 // --- movie-modal__content ---
