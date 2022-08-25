@@ -20,6 +20,7 @@
       modal.classList.add('is-hidden');
       modal.removeEventListener('click', closeModal);
       window.removeEventListener('keydown', onPressEscape);
+      document.body.style.overflow = 'visible';
     }
     function onPressEscape(event) {
       if (event.code === 'Escape') {
