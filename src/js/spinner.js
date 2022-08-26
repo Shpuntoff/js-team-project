@@ -1,8 +1,9 @@
 let overlay = document.querySelector('.overlay');
 
-export function spinner() {
+export function spinnerStart() {
   overlay.classList.add('is-open');
-  setTimeout(() => {
-    overlay.classList.remove('is-open');
-  }, 600);
+};
+
+export function spinnerStop() {
+  overlay.classList.remove('is-open');
 };

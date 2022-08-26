@@ -8,11 +8,11 @@ btn.addEventListener('click', onClickChangeTheme);
 
 if (localStorage.getItem('theme') === 'dark-theme') {
   body.classList.add('dark-theme');
-}
+};
 
 if (localStorage.getItem('theme') === 'light-theme') {
   body.classList.add('light-theme');
-}
+};
 
 function onClickChangeTheme(ev) {
   ev.preventDefault();
@@ -29,5 +29,5 @@ function onClickChangeTheme(ev) {
     body.classList.add('dark-theme');
     localStorage.setItem('theme', 'dark-theme');
     
-  }
-}
+  };
+};

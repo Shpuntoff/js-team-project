@@ -1,3 +1,4 @@
+import { spinnerStop } from './spinner.js'
 import { requesterApi } from './requester-api';
 import { renderHomeCards } from './render.js';
 import { renderPagination } from './pagination';
@@ -32,11 +33,13 @@ const submitHandler = event => {
         }, 8000);
         contentBoxEl.innerHTML = '';
         paginationEL.innerHTML = '';
+        spinnerStop();
       } else {
         notifFetch.classList.add('visually-hidden');
         wrapperHome.classList.add('visually-hidden');
         renderPagination(data.page, data.total_pages);
         renderHomeCards(data.results);
+        spinnerStop();
         return;
       }
     });

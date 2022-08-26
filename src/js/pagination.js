@@ -1,18 +1,11 @@
-import {
-  requesterApi,
-  requesterApiByID,
-  requesterApiGenres,
-} from './requester-api.js';
-import {renderHomeCards} from './render.js';
-import {spinner} from'./spinner.js'
-import {onScrollUp} from './scroll.js'
-import {spinner} from'./spinner.js'
-import {query} from'./fetchTitle.js'
- 
+import { requesterApi } from './requester-api.js';
+import { spinnerStop } from './spinner.js';
+import { renderHomeCards } from './render.js';
+import { onScrollUp } from './scroll.js';
+import { query } from './fetchTitle.js';
 
-
-let globalCurrentpage = 1
-let globalAllPages
+let globalCurrentpage = 1;
+let globalAllPages;
 
 const pagination = document.querySelector('.pagination');
 pagination.addEventListener('click', handlerPagination);
@@ -62,9 +55,7 @@ export function renderPagination(currentPage, allPages) {
   }
 
   pagination.innerHTML = markup;
-  
-
-}
+};
 
 function handlerPagination(e) {
   console.log(e.target.textContent); 
@@ -83,8 +74,8 @@ function handlerPagination(e) {
     .then(data => {
       renderPagination(data.page, data.total_pages);
       renderHomeCards(data.results);
-      onScrollUp(e)
-
+      onScrollUp(e);
+      spinnerStop();
       return;
     });
   };
@@ -93,27 +84,23 @@ function handlerPagination(e) {
     globalCurrentpage = globalCurrentpage += 1
     requesterApi(query, globalCurrentpage)
     .then(data => {
-      spinner();
       renderPagination(data.page, data.total_pages);
       renderHomeCards(data.results);
-      onScrollUp(e)
-
-     
-
+      onScrollUp(e);
+      spinnerStop();
       return;
       });
   };
 
   if (e.target.textContent !== '>' && e.target.textContent !== '<') {
-    globalCurrentpage = e.target.textContent
+    globalCurrentpage = e.target.textContent;
     requesterApi(query, globalCurrentpage)
       .then(data => {
-        renderPagination(data.page, data.total_pages)
+        renderPagination(data.page, data.total_pages);
         renderHomeCards(data.results);
-        onScrollUp(e)
-
+        onScrollUp(e);
+        spinnerStop();
         return;
       });
   };
-
 };
