@@ -31,7 +31,13 @@ const submitHandler = event => {
           notifFetch.classList.add('visually-hidden');
           wrapperHome.classList.add('visually-hidden');
         }, 3000);
-        spinnerStop();
+        inputEL.value = '';
+        query = '';
+        requesterApi().then(data => {
+          renderHomeCards(data.results);
+          renderPagination(data.page, data.total_pages);
+          spinnerStop();
+        });
       } else {
         notifFetch.classList.add('visually-hidden');
         wrapperHome.classList.add('visually-hidden');
