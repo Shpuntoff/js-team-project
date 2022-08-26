@@ -55,51 +55,46 @@ export function renderPagination(currentPage, allPages) {
   }
 
   pagination.innerHTML = markup;
-};
+}
 
 function handlerPagination(e) {
-
   if (e.target.nodeName !== 'LI') {
     return;
   }
-  if (e.target.textContent === "...") {
-    return
-  };
+  if (e.target.textContent === '...') {
+    return;
+  }
 
   if (e.target.textContent === '<') {
-
-    globalCurrentpage = globalCurrentpage -= 1
-    requesterApi(query, globalCurrentpage)
-    .then(data => {
+    globalCurrentpage = globalCurrentpage -= 1;
+    requesterApi(query, globalCurrentpage).then(data => {
       renderPagination(data.page, data.total_pages);
       renderHomeCards(data.results);
       onScrollUp(e);
       spinnerStop();
       return;
     });
-  };
+  }
 
   if (e.target.textContent === '>') {
-    globalCurrentpage = globalCurrentpage += 1
-    requesterApi(query, globalCurrentpage)
-    .then(data => {
+    globalCurrentpage = globalCurrentpage += 1;
+    requesterApi(query, globalCurrentpage).then(data => {
       renderPagination(data.page, data.total_pages);
       renderHomeCards(data.results);
       onScrollUp(e);
       spinnerStop();
       return;
-      });
-  };
+    });
+  }
 
   if (e.target.textContent !== '>' && e.target.textContent !== '<') {
     globalCurrentpage = e.target.textContent;
-    requesterApi(query, globalCurrentpage)
-      .then(data => {
-        renderPagination(data.page, data.total_pages);
-        renderHomeCards(data.results);
-        onScrollUp(e);
-        spinnerStop();
-        return;
-      });
-  };
-};
+    requesterApi(query, globalCurrentpage).then(data => {
+      renderPagination(data.page, data.total_pages);
+      renderHomeCards(data.results);
+      onScrollUp(e);
+      spinnerStop();
+      return;
+    });
+  }
+}
