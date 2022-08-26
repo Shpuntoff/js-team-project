@@ -58,7 +58,6 @@ export function renderPagination(currentPage, allPages) {
 };
 
 function handlerPagination(e) {
-  console.log(e.target.textContent); 
 
   if (e.target.nodeName !== 'LI') {
     return;

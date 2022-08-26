@@ -31,8 +31,6 @@ const submitHandler = event => {
           notifFetch.classList.add('visually-hidden');
           wrapperHome.classList.add('visually-hidden');
         }, 3000);
-        // contentBoxEl.innerHTML = '';
-        // paginationEL.innerHTML = '';
         spinnerStop();
       } else {
         notifFetch.classList.add('visually-hidden');
