@@ -1,4 +1,4 @@
-import { spinnerStop } from './spinner.js'
+import { spinnerStop } from './spinner.js';
 import { requesterApi } from './requester-api';
 import { renderHomeCards } from './render.js';
 import { renderPagination } from './pagination';
@@ -7,14 +7,13 @@ const formEL = document.querySelector('.form');
 const inputEL = document.querySelector('.input');
 const notifFetch = document.querySelector('.notif');
 const contentBoxEl = document.querySelector('.list');
-const wrapperHome = document.querySelector('.wrapper-holder-home');
+const wrapperHome = document.querySelector('.backdrop-enter-field');
 const paginationEL = document.querySelector('.pagination');
 export let query;
 
 const submitHandler = event => {
   event.preventDefault();
   query = inputEL.value;
-  console.log(query.length);
   if (query.length < 1) {
     notifFetch.textContent = 'Enter field';
     notifFetch.classList.remove('visually-hidden');
@@ -30,9 +29,10 @@ const submitHandler = event => {
         notifFetch.classList.remove('visually-hidden');
         timerId = setInterval(() => {
           notifFetch.classList.add('visually-hidden');
-        }, 8000);
-        contentBoxEl.innerHTML = '';
-        paginationEL.innerHTML = '';
+          wrapperHome.classList.add('visually-hidden');
+        }, 3000);
+        // contentBoxEl.innerHTML = '';
+        // paginationEL.innerHTML = '';
         spinnerStop();
       } else {
         notifFetch.classList.add('visually-hidden');
