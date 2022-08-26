@@ -14,11 +14,10 @@ export let query;
 const submitHandler = event => {
   event.preventDefault();
   query = inputEL.value;
-  console.log(query.length);
   if (query.length < 1) {
     notifFetch.textContent = 'Enter field';
     notifFetch.classList.remove('visually-hidden');
-    timerId = setInterval(() => {
+    setInterval(() => {
       notifFetch.classList.add('visually-hidden');
     }, 5000);
   } else {
@@ -28,7 +27,7 @@ const submitHandler = event => {
         notifFetch.textContent =
           'Search result not successful. Enter the correct movie name and';
         notifFetch.classList.remove('visually-hidden');
-        timerId = setInterval(() => {
+        setInterval(() => {
           notifFetch.classList.add('visually-hidden');
         }, 8000);
         contentBoxEl.innerHTML = '';
