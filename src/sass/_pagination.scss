@@ -43,7 +43,7 @@
   height: 40px;
   width: 40px;
   font-weight: 500;
-  
+
   border-radius: 5px;
   background: $whiteColor;
   display: flex;
@@ -54,13 +54,13 @@
 
 .pagination__link--first,
 .pagination__link--last,
-.pagination__link--point{
-    @media screen and (max-width: 500px){
-      display: none;
-    }
+.pagination__link--point {
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 }
 
-.pagination__link--point{
+.pagination__link--point {
   height: 40px;
   width: 40px;
   font-weight: 500;
