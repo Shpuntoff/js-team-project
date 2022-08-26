@@ -155,6 +155,8 @@ img {
     font-size: 12px;
     line-height: 1.67;
     font-weight: 500;
+    max-height: 300px;
+    overflow: auto;
 }
 
 .modal__watch-button {
