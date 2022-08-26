@@ -8,6 +8,7 @@
   background: rgba(231, 155, 197, 0.3);
   transition: 1s;
   transform: opacity(1);
+  
 }
 .modal-overlay.is-hidden {
   opacity: 0;
@@ -28,6 +29,7 @@
   background-size:auto;
   background-repeat:round;
   overflow-y: auto;
+  
 
 }
 

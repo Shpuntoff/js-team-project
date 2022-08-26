@@ -12,6 +12,7 @@
       closeModalBtn.addEventListener('click', closeModal);
       modal.addEventListener('click', backdropCloseModal);
       body.classList.add('scroll-hidden');
+      document.body.style.overflow = 'hidden';
     }
     function closeModal() {
       body.classList.remove('scroll-hidden');
@@ -19,6 +20,7 @@
       modal.classList.add('is-hidden');
       modal.removeEventListener('click', closeModal);
       window.removeEventListener('keydown', onPressEscape);
+      document.body.style.overflow = 'visible';
     }
     function onPressEscape(event) {
       if (event.code === 'Escape') {
