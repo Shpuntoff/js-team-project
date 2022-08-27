@@ -1,4 +1,5 @@
 import poster from '../images/noposter.jpg';
+import svg from '../images/symbol-defs.svg';
 
 
 export function modalLibraryMarkup({
@@ -54,6 +55,11 @@ export function modalLibraryMarkup({
   </tbody>
 </table>
       <p class="movie-modal__about--title">ABOUT</p>
+      <button type="button" class="modal__watch-button js-playtrailer">
+      <svg class="movies-modal__play-icon" width="14" height="14">
+        <use href="${svg}#icon-play"></use>
+      </svg><span>Watch trailer</span>
+      </button>
       <p class="movie-modal__about--text">${aboutText}</p>
       <ul class="modal__btns">
         <li><button type="button" class="modal__btns__button js-addtowatched">add to watched</button></li>
