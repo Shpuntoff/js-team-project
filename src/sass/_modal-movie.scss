@@ -167,10 +167,9 @@ img {
     text-align: center;
     text-transform: uppercase;
 
-    color: $mainColor;
+    color: $accentColor;
     background-color: $bgColor;
     border: none;
-
     border-radius: 5px;
 
     font-family: 'Roboto';
@@ -191,10 +190,14 @@ img {
 
     &:hover,
     &:focus {
-        color: $accentColor;
+        color: white;
+        background-color: red;
         transform: scale(1.03);
     }
 }
+button:focus { 
+    outline: none; 
+} 
 
 .movies-modal__play-icon {
     fill: currentColor;

@@ -37,6 +37,8 @@ export function requesterApiByID(id) {
             .catch(error => console.log(error));
 };
 
+
+
 export function requesterApiGenres() {
     fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`)
         .then(response => {
@@ -49,4 +51,21 @@ export function requesterApiGenres() {
             localStorage.setItem(`genresList`, JSON.stringify(response.genres));
         })
         .catch(error => console.log(error));
+};
+
+
+
+
+export function requesterTrailerByID(id) {
+    return fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
+        .then(response => {
+                if (!response.ok) {
+                    throw new Error(response.status);
+                }
+                return response.json();
+            })
+            .then(response => {
+                return response;
+            })
+            .catch(error => console.log(error));
 };

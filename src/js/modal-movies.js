@@ -1,5 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 import { requesterApiByID } from './requester-api';
+import { requesterTrailerByID } from './requester-api';
 import { modalLibraryMarkup } from './modal-markup';
 import { watchedQueue } from './watched-queue'
 import { rerender } from './render';
@@ -8,6 +9,7 @@ import svg from '../images/symbol-defs.svg';
 
 
 let movieId = 0;
+let modalRef = {};
 const listRef = document.querySelector('.list',);
 
 listRef.addEventListener('click', onFilmClick);
@@ -21,7 +23,8 @@ async function onFilmClick(e) {
     movieId = getId(movieCard);
     const movie = await getMovieById(movieId);
     openModal(movie);
-    watchedQueue();    
+    watchedQueue(); 
+    addTrailerPlayButton();   
 }
 function getId(movieCard) {
     return movieCard.id;
@@ -65,12 +68,6 @@ function openModal(movie) {
         rerender();
     }
 })
-
-function onEsc(event) {
-    if (event.code === "Escape") {
-        instance.close();
-        };
-    };
     instance.show();
 
     const watched = JSON.parse(localStorage.getItem(`watchedMoviesIDs`));
@@ -81,4 +78,92 @@ function onEsc(event) {
     if (queue && queue.includes(movie.id)) {
         document.querySelector('.js-addtoqueue').textContent = 'remove from queue';
     };
-};
+    return (modalRef = instance);
+}
+
+
+function onEsc(event) {
+    if (event.code === "Escape") {
+        modalRef.close();
+        };
+    };
+
+// Trailer -----------------------------------------------------------------------
+
+function addTrailerPlayButton() {
+    const btnPlayRef = document.querySelector('.js-playtrailer');
+    btnPlayRef.addEventListener('click', onTrailerPlay);
+}
+
+async function onTrailerPlay(event) {
+    event.preventDefault();
+    const movieVideos = await getTrailerById(movieId);
+    console.log(movieVideos);
+    const movieVideosall = movieVideos.results;
+    const movieTrailer = movieVideosall.find(
+        video => video.type === 'Trailer' && video.site === 'YouTube'
+    );
+    if (movieTrailer) {
+        openTrailerModal(movieTrailer);
+    } else {
+        Notify.failure('Sorry, we can`t find any trailer of this movie.');
+    }
+    console.log(movieTrailer);
+}
+
+async function onTrailerPlay(event) {
+    event.preventDefault();
+    const movieVideos = await getTrailerById(movieId);
+    console.log(movieVideos);
+    const movieVideosall = movieVideos.results;
+    const movieTrailer = movieVideosall.find(
+        video => video.type === 'Trailer' && video.site === 'YouTube'
+    );
+    if (movieTrailer) {
+        openTrailerModal(movieTrailer);
+    } else {
+        Notify.failure('Sorry, we can`t find any trailer of this movie.');
+    }
+    console.log(movieTrailer);
+}
+
+async function getTrailerById(movieId) {
+    try {
+        const videos = await requesterTrailerByID(movieId);
+        return videos;
+    } catch (error) {
+        console.log('ERROR = ', error);
+    }
+    console.log(data);
+}
+
+function openTrailerModal(movieTrailer) {
+    const instance = basicLightbox.create(
+        `
+  <iframe width="806" height="558" 
+  src="https://www.youtube.com/embed/${movieTrailer.key}" 
+  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen></iframe>
+`,
+        {
+            onShow: instance => {
+                instance.element();
+                window.addEventListener("keydown", onEscTrailer);
+                window.removeEventListener("keydown", onEsc);
+                document.body.setAttribute('style', 'overflow: hidden');
+            },
+            onClose: () => {
+                window.removeEventListener("keydown", onEscTrailer);
+                window.addEventListener("keydown", onEsc);
+                document.body.removeAttribute('style');
+            },
+        }
+    );
+    function onEscTrailer(event) {
+        if (event.code === "Escape") {
+            instance.close();
+            };
+        };
+        instance.show();
+}
+
