@@ -17,4 +17,3 @@ import './js/team-modal';
 import './js/modal-movies';
 import './js/pagination';
 import './js/fetchTitle';
-import './js/trailer-palyer';
