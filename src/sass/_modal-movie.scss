@@ -257,21 +257,22 @@ button:focus {
   
   @media screen and (min-width: 300px) and (max-width: 692px) {
     .player__cls-btn {
-      top: 90px;
-      right: calc(((100vw - 324px) / 2));
+        z-index:5;
+        top: 90px;
+        right: calc(((100vw - 324px) / 2));
     }
   }
   
   @media screen and (min-width: 768px) {
     .player__cls-btn {
-      top: 100px;
-      right: calc(((100vw - 668px) / 2));
+        top: 100px;
+        right: calc(((100vw - 920px) / 2));
     }
   }
   
   @media screen and (min-width: 1024px) {
     .player__cls-btn {
-      top: 100px;
-      right: calc(((100vw - 824px) / 2));
+        top: 100px;
+        right: calc(((100vw - 920px) / 2));
     }
   }
