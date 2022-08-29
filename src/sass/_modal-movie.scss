@@ -234,45 +234,43 @@ button:focus {
 }
 
 .player__cls-btn {
+    position: fixed;
+    top: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    
+    justify-content: center;
+
     width: 30px;
     height: 30px;
     padding: 0;
 
     border: none;
     background-color: transparent;
-    color: $mainColor;
+    color: $accentColor;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover,
     &:focus {
         cursor: pointer;
-        color: $accentColor;
     }
   }
   
   @media screen and (min-width: 300px) and (max-width: 692px) {
-    .lightbox__button {
+    .player__cls-btn {
       top: 90px;
       right: calc(((100vw - 324px) / 2));
     }
   }
   
   @media screen and (min-width: 768px) {
-    .lightbox__button {
+    .player__cls-btn {
       top: 100px;
       right: calc(((100vw - 668px) / 2));
     }
   }
   
   @media screen and (min-width: 1024px) {
-    .lightbox__button {
+    .player__cls-btn {
       top: 100px;
       right: calc(((100vw - 824px) / 2));
     }
