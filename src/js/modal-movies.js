@@ -5,7 +5,6 @@ import { modalLibraryMarkup } from './modal-markup';
 import { watchedQueue } from './watched-queue'
 import { rerender } from './render';
 import { spinnerStop } from './spinner.js';
-import './trailer-palyer.js';
 import svg from '../images/symbol-defs.svg';
 
 
@@ -51,7 +50,6 @@ function openModal(movie) {
     <div class="modal" id ="${movie.id}">
     <button type="button" class="movies-modal__close-btn" data-modal-close>
     <svg class="movies-modal__close-icon" width="14" height="14">
-    Xsdafsdf
         <use href="${svg}#icon-x"></use>
         </svg>
     </button>
@@ -147,5 +145,32 @@ function openTrailerModal(movieTrailer) {
             instance.close();
             };
         };
+    
         instance.show();
-}
+        TrailerCloser(instance)
+       
+    }
+    function TrailerCloser(instance) {
+        const modalBox = document.querySelector('.basicLightbox--iframe');
+        modalBox.insertAdjacentHTML(
+          'afterbegin',
+          `<button
+            type="button"
+            class="player__cls-btn"
+            data-action="close-lightbox"
+            >
+            <svg class="movies-modal__close-icon" width="14" height="14">
+            <use href="${svg}#icon-x"></use>
+            </svg>
+            </button>
+        `,
+        );
+        const modalCloseBtn = document.querySelector(
+          '[data-action="close-lightbox"]',
+        );
+        modalCloseBtn.addEventListener('click', () => instance.close());
+      }
+    
+   
+
+      
