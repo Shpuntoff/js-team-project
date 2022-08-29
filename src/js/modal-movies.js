@@ -4,7 +4,8 @@ import { requesterTrailerByID } from './requester-api';
 import { modalLibraryMarkup } from './modal-markup';
 import { watchedQueue } from './watched-queue'
 import { rerender } from './render';
-import { spinnerStop } from './spinner.js'
+import { spinnerStop } from './spinner.js';
+import './trailer-palyer.js';
 import svg from '../images/symbol-defs.svg';
 
 
@@ -38,7 +39,7 @@ async function getMovieById(movieId) {
     } catch (error) {
         console.log(error);
     }
-    console.log(movieId);
+    // console.log(movieId);
 }
 
 
@@ -94,11 +95,9 @@ function addTrailerPlayButton() {
     const btnPlayRef = document.querySelector('.js-playtrailer');
     btnPlayRef.addEventListener('click', onTrailerPlay);
 }
-
 async function onTrailerPlay(event) {
     event.preventDefault();
     const movieVideos = await getTrailerById(movieId);
-    console.log(movieVideos);
     const movieVideosall = movieVideos.results;
     const movieTrailer = movieVideosall.find(
         video => video.type === 'Trailer' && video.site === 'YouTube'
@@ -108,24 +107,8 @@ async function onTrailerPlay(event) {
     } else {
         Notify.failure('Sorry, we can`t find any trailer of this movie.');
     }
-    console.log(movieTrailer);
 }
 
-async function onTrailerPlay(event) {
-    event.preventDefault();
-    const movieVideos = await getTrailerById(movieId);
-    console.log(movieVideos);
-    const movieVideosall = movieVideos.results;
-    const movieTrailer = movieVideosall.find(
-        video => video.type === 'Trailer' && video.site === 'YouTube'
-    );
-    if (movieTrailer) {
-        openTrailerModal(movieTrailer);
-    } else {
-        Notify.failure('Sorry, we can`t find any trailer of this movie.');
-    }
-    console.log(movieTrailer);
-}
 
 async function getTrailerById(movieId) {
     try {
@@ -134,10 +117,10 @@ async function getTrailerById(movieId) {
     } catch (error) {
         console.log('ERROR = ', error);
     }
-    console.log(data);
 }
 
 function openTrailerModal(movieTrailer) {
+    
     const instance = basicLightbox.create(
         `
   <iframe width="806" height="558" 
@@ -166,4 +149,3 @@ function openTrailerModal(movieTrailer) {
         };
         instance.show();
 }
-
